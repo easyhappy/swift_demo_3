@@ -10,7 +10,7 @@
 #import "Order.h"
 #import "DataSigner.h"
 #import <AlipaySDK/AlipaySDK.h>
-//#import "AFHTTPRequestOperation.h"
+
 @implementation Product
 
 
@@ -161,21 +161,25 @@
 		[alert show];
 		return;
 	}
-	
-	/*
+    
+    NSDictionary *responseData = [self postDataFrom:(@"http://localhost:3000/cents/purchase?auth_token=basic_01&cent=1000")];
+    
+    
+    NSDictionary *alipayOptions = [[responseData objectForKey:@"data"] objectForKey:@"alipay_options"];
+    /*
 	 *生成订单信息及签名
 	 */
 	//将商品信息赋予AlixPayOrder的成员变量
     Order *order = [[Order alloc] init];
-	order.partner = partner;
-	order.seller = seller;
-	order.tradeNO = [self generateTradeNO]; //订单ID（由商家自行制定）
-	order.productName = product.subject; //商品标题
-	order.productDescription = product.body; //商品描述
-	order.amount = [NSString stringWithFormat:@"%.2f",product.price]; //商品价格
-	order.notifyURL =  @"http://www.xxx.com"; //回调URL
+	order.partner = [alipayOptions objectForKey:@"partner"];
+	order.seller = [alipayOptions objectForKey:@"seller_id"];
+	order.tradeNO = [alipayOptions objectForKey:@"out_trade_no"]; //订单ID（由商家自行制定）
+	order.productName = [alipayOptions objectForKey:@"subject"]; //商品标题
+	order.productDescription = [alipayOptions objectForKey:@"body"]; //商品描述
+	order.amount = [NSString stringWithFormat:@"%@", [alipayOptions objectForKey:@"total_fee"]]; //商品价格
+	order.notifyURL =  [alipayOptions objectForKey:@"notify_url"]; //回调URL
     
-    order.service = @"mobile.securitypay.pay";
+    order.service = [alipayOptions objectForKey:@"service"];
     order.paymentType = @"1";
     order.inputCharset = @"utf-8";
     order.itBPay = @"30m";
@@ -195,14 +199,57 @@
 	NSString *orderString = nil;
 	if (signedString != nil) {
 		orderString = [NSString stringWithFormat:@"%@&sign=\"%@\"&sign_type=\"%@\"",
-                       orderSpec, signedString, @"RSA"];
-        
+                       orderSpec, [alipayOptions objectForKey:@"sign"], @"RSA"];
+        NSLog(@"+++++++");
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-            NSLog(@"reslut = %@",resultDic);
+            NSLog(@"---------");
+            NSLog(@"reslut = %@",[resultDic objectForKey:@"memo"]);
+            NSLog(@"---------");
         }];
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+}
+
+- (NSDictionary *) getDataFrom:(NSString *)url{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setHTTPMethod:@"GET"];
+    [request setURL:[NSURL URLWithString:url]];
+    
+    NSError *error = [[NSError alloc] init];
+    NSHTTPURLResponse *responseCode = nil;
+    
+    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+    if([responseCode statusCode] != 200){
+        NSLog(@"Error getting %@, HTTP status code %i", url, [responseCode statusCode]);
+        return nil;
+    }
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:oResponseData
+                                                         options:kNilOptions
+                                                           error:&error];
+    return json;
+}
+
+
+- (NSDictionary *) postDataFrom:(NSString *)url{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setHTTPMethod:@"POST"];
+    [request setURL:[NSURL URLWithString:url]];
+    
+    NSError *error = [[NSError alloc] init];
+    NSHTTPURLResponse *responseCode = nil;
+    
+    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+    
+    if([responseCode statusCode] != 200){
+        NSLog(@"Error getting %@, HTTP status code %i", url, [responseCode statusCode]);
+        return nil;
+    }
+    
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:oResponseData
+                                                         options:kNilOptions
+                                                           error:&error];
+    return json;
 }
 
 
