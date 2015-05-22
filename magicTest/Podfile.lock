@@ -2,9 +2,9 @@ PODS:
   - MagicalRecord/Shorthand (2.2)
 
 DEPENDENCIES:
-  - MagicalRecord/Shorthand
+  - MagicalRecord/Shorthand (~> 2.2)
 
 SPEC CHECKSUMS:
-  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.3

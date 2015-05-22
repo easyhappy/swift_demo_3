@@ -1,0 +1,6 @@
+[submodule "refresherTest/refresher"]
+	path = refresherTest/refresher
+	url = git@github.com:jcavar/refresher.git
+[submodule "refreshTest/refresher"]
+	path = refreshTest/refresher
+	url = git@github.com:jcavar/refresher.git

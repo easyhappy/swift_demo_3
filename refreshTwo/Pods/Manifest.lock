@@ -1,0 +1,10 @@
+PODS:
+  - Refresher (0.1.1)
+
+DEPENDENCIES:
+  - Refresher
+
+SPEC CHECKSUMS:
+  Refresher: 95047889606b978aa3ba7825a773d412823981b9
+
+COCOAPODS: 0.36.3
