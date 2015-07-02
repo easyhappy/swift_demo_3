@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (1.2.3)
+  - FlatUIColors (0.2.0)
+  - Persei (1.0.1)
+  - RBStoryboardLink (0.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 1.2)
+  - FlatUIColors
+  - Persei (~> 1.0.1)
+  - RBStoryboardLink (= 0.1.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
+  FlatUIColors: 515307d99990b1af3465129a1c08796f9917b2a1
+  Persei: 52d90b6f825162e81df1f0ee5559cfe5eee47475
+  RBStoryboardLink: 438a56a29ef5a433d33d2f045533d6ca8d1f7755
+
+COCOAPODS: 0.37.1

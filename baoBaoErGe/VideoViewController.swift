@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Persei
 
-class VideoViewController: UIViewController {
+class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let menu = MenuView()
+        var item = MenuItem(image: UIImage(named: "video_40.png")!)
+        menu.items = [item, item,item]
+        tableView.addSubview(menu)
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +25,15 @@ class VideoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("game_videos", forIndexPath: indexPath) as! UITableViewCell
+        return cell
     }
     
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2345FB7FB66BBB3492229B0B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787E477C35C8277A215E5ED5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F9036B061B43B02C005F79E3 /* test_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9036B051B43B02C005F79E3 /* test_icon.png */; };
 		F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9176C281B427ABB00B4CE1C /* AppDelegate.swift */; };
 		F9176C2C1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9176C2A1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld */; };
 		F9176C2E1B427ABB00B4CE1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9176C2D1B427ABB00B4CE1C /* ViewController.swift */; };
@@ -14,6 +16,15 @@
 		F9176C331B427ABB00B4CE1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9176C321B427ABB00B4CE1C /* Images.xcassets */; };
 		F9176C361B427ABB00B4CE1C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9176C341B427ABB00B4CE1C /* LaunchScreen.xib */; };
 		F9176C421B427ABB00B4CE1C /* baoBaoErGeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9176C411B427ABB00B4CE1C /* baoBaoErGeTests.swift */; };
+		F9372FAE1B42A08400C34FF0 /* video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9372FAD1B42A08400C34FF0 /* video.storyboard */; };
+		F9372FB01B42D15300C34FF0 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = F9372FAF1B42D15300C34FF0 /* video.png */; };
+		F9372FB21B42D1F300C34FF0 /* video_40.png in Resources */ = {isa = PBXBuildFile; fileRef = F9372FB11B42D1F300C34FF0 /* video_40.png */; };
+		F9372FB41B42D23900C34FF0 /* video_20.png in Resources */ = {isa = PBXBuildFile; fileRef = F9372FB31B42D23900C34FF0 /* video_20.png */; };
+		F94A14371B442AE100B301D9 /* baobaoerge.png in Resources */ = {isa = PBXBuildFile; fileRef = F94A14361B442AE100B301D9 /* baobaoerge.png */; };
+		F94A14451B44EF3300B301D9 /* video-camera-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F94A14441B44EF3300B301D9 /* video-camera-7.png */; };
+		F94A14471B44EFE700B301D9 /* mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94A14461B44EFE700B301D9 /* mine.storyboard */; };
+		F94A14491B44F28700B301D9 /* star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F94A14481B44F28700B301D9 /* star-7.png */; };
+		F94A144D1B450F9700B301D9 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A144C1B450F9700B301D9 /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		787E477C35C8277A215E5ED5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7D456FC26F7AAA19E5890E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F65BFC73861020516B96B4A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F9036B051B43B02C005F79E3 /* test_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_icon.png; sourceTree = "<group>"; };
 		F9176C231B427ABB00B4CE1C /* baoBaoErGe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baoBaoErGe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9176C271B427ABB00B4CE1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9176C281B427ABB00B4CE1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +53,15 @@
 		F9176C3B1B427ABB00B4CE1C /* baoBaoErGeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = baoBaoErGeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9176C401B427ABB00B4CE1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9176C411B427ABB00B4CE1C /* baoBaoErGeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baoBaoErGeTests.swift; sourceTree = "<group>"; };
+		F9372FAD1B42A08400C34FF0 /* video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = video.storyboard; sourceTree = "<group>"; };
+		F9372FAF1B42D15300C34FF0 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
+		F9372FB11B42D1F300C34FF0 /* video_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_40.png; sourceTree = "<group>"; };
+		F9372FB31B42D23900C34FF0 /* video_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_20.png; sourceTree = "<group>"; };
+		F94A14361B442AE100B301D9 /* baobaoerge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baobaoerge.png; sourceTree = "<group>"; };
+		F94A14441B44EF3300B301D9 /* video-camera-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-camera-7.png"; sourceTree = "<group>"; };
+		F94A14461B44EFE700B301D9 /* mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mine.storyboard; sourceTree = "<group>"; };
+		F94A14481B44F28700B301D9 /* star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7.png"; sourceTree = "<group>"; };
+		F94A144C1B450F9700B301D9 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ../VideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2345FB7FB66BBB3492229B0B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +83,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147858944B1083509767A99F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				787E477C35C8277A215E5ED5 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BB8C5E85DA963F8C8F0FC8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC7D456FC26F7AAA19E5890E /* Pods.debug.xcconfig */,
+				F65BFC73861020516B96B4A0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F9176C1A1B427ABB00B4CE1C = {
 			isa = PBXGroup;
 			children = (
 				F9176C251B427ABB00B4CE1C /* baoBaoErGe */,
 				F9176C3E1B427ABB00B4CE1C /* baoBaoErGeTests */,
 				F9176C241B427ABB00B4CE1C /* Products */,
+				7BB8C5E85DA963F8C8F0FC8C /* Pods */,
+				147858944B1083509767A99F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +123,12 @@
 		F9176C251B427ABB00B4CE1C /* baoBaoErGe */ = {
 			isa = PBXGroup;
 			children = (
+				F94A144C1B450F9700B301D9 /* VideoViewController.swift */,
 				F9176C281B427ABB00B4CE1C /* AppDelegate.swift */,
 				F9176C2D1B427ABB00B4CE1C /* ViewController.swift */,
 				F9176C2F1B427ABB00B4CE1C /* Main.storyboard */,
+				F9372FAD1B42A08400C34FF0 /* video.storyboard */,
+				F94A14461B44EFE700B301D9 /* mine.storyboard */,
 				F9176C321B427ABB00B4CE1C /* Images.xcassets */,
 				F9176C341B427ABB00B4CE1C /* LaunchScreen.xib */,
 				F9176C2A1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld */,
@@ -93,6 +140,13 @@
 		F9176C261B427ABB00B4CE1C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F94A14481B44F28700B301D9 /* star-7.png */,
+				F94A14361B442AE100B301D9 /* baobaoerge.png */,
+				F9372FB11B42D1F300C34FF0 /* video_40.png */,
+				F9036B051B43B02C005F79E3 /* test_icon.png */,
+				F94A14441B44EF3300B301D9 /* video-camera-7.png */,
+				F9372FB31B42D23900C34FF0 /* video_20.png */,
+				F9372FAF1B42D15300C34FF0 /* video.png */,
 				F9176C271B427ABB00B4CE1C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -122,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9176C451B427ABC00B4CE1C /* Build configuration list for PBXNativeTarget "baoBaoErGe" */;
 			buildPhases = (
+				D0189AC6E0D93EF88E4B23E1 /* Check Pods Manifest.lock */,
 				F9176C1F1B427ABB00B4CE1C /* Sources */,
 				F9176C201B427ABB00B4CE1C /* Frameworks */,
 				F9176C211B427ABB00B4CE1C /* Resources */,
+				019F712914107FC75543D47A /* Embed Pods Frameworks */,
+				82D6A15C21FCFAD13C7448BF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +252,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9036B061B43B02C005F79E3 /* test_icon.png in Resources */,
 				F9176C311B427ABB00B4CE1C /* Main.storyboard in Resources */,
 				F9176C361B427ABB00B4CE1C /* LaunchScreen.xib in Resources */,
+				F94A14471B44EFE700B301D9 /* mine.storyboard in Resources */,
+				F9372FAE1B42A08400C34FF0 /* video.storyboard in Resources */,
 				F9176C331B427ABB00B4CE1C /* Images.xcassets in Resources */,
+				F9372FB21B42D1F300C34FF0 /* video_40.png in Resources */,
+				F94A14371B442AE100B301D9 /* baobaoerge.png in Resources */,
+				F9372FB41B42D23900C34FF0 /* video_20.png in Resources */,
+				F94A14451B44EF3300B301D9 /* video-camera-7.png in Resources */,
+				F9372FB01B42D15300C34FF0 /* video.png in Resources */,
+				F94A14491B44F28700B301D9 /* star-7.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +276,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		019F712914107FC75543D47A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82D6A15C21FCFAD13C7448BF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0189AC6E0D93EF88E4B23E1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F9176C1F1B427ABB00B4CE1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -217,6 +331,7 @@
 			files = (
 				F9176C2E1B427ABB00B4CE1C /* ViewController.swift in Sources */,
 				F9176C2C1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld in Sources */,
+				F94A144D1B450F9700B301D9 /* VideoViewController.swift in Sources */,
 				F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +457,7 @@
 		};
 		F9176C461B427ABC00B4CE1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC7D456FC26F7AAA19E5890E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = baoBaoErGe/Info.plist;
@@ -353,6 +469,7 @@
 		};
 		F9176C471B427ABC00B4CE1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F65BFC73861020516B96B4A0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = baoBaoErGe/Info.plist;
@@ -415,6 +532,7 @@
 				F9176C471B427ABC00B4CE1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9176C481B427ABC00B4CE1C /* Build configuration list for PBXNativeTarget "baoBaoErGeTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +541,7 @@
 				F9176C4A1B427ABC00B4CE1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

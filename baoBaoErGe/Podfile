@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '7.0'
+use_frameworks!
+
+pod 'Alamofire', '~> 1.2'
+pod "RBStoryboardLink", "0.1.0"
+pod 'FlatUIColors'
+pod 'Persei', '~> 1.0.1'
