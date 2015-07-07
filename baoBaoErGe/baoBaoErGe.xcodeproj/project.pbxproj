@@ -25,6 +25,10 @@
 		F94A14471B44EFE700B301D9 /* mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94A14461B44EFE700B301D9 /* mine.storyboard */; };
 		F94A14491B44F28700B301D9 /* star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F94A14481B44F28700B301D9 /* star-7.png */; };
 		F94A144D1B450F9700B301D9 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A144C1B450F9700B301D9 /* VideoViewController.swift */; };
+		F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75B1B4B82DC0090ED74 /* GuillotineMenuSegue.swift */; };
+		F997B7601B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75C1B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift */; };
+		F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */; };
+		F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		F94A14461B44EFE700B301D9 /* mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mine.storyboard; sourceTree = "<group>"; };
 		F94A14481B44F28700B301D9 /* star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7.png"; sourceTree = "<group>"; };
 		F94A144C1B450F9700B301D9 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ../VideoViewController.swift; sourceTree = "<group>"; };
+		F997B75B1B4B82DC0090ED74 /* GuillotineMenuSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuSegue.swift; sourceTree = "<group>"; };
+		F997B75C1B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
+		F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuViewController.swift; sourceTree = "<group>"; };
+		F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 		F9176C251B427ABB00B4CE1C /* baoBaoErGe */ = {
 			isa = PBXGroup;
 			children = (
+				F997B75A1B4B82DC0090ED74 /* GuillotineMenu */,
 				F94A144C1B450F9700B301D9 /* VideoViewController.swift */,
 				F9176C281B427ABB00B4CE1C /* AppDelegate.swift */,
 				F9176C2D1B427ABB00B4CE1C /* ViewController.swift */,
@@ -167,6 +176,17 @@
 				F9176C401B427ABB00B4CE1C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F997B75A1B4B82DC0090ED74 /* GuillotineMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F997B75B1B4B82DC0090ED74 /* GuillotineMenuSegue.swift */,
+				F997B75C1B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift */,
+				F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */,
+				F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */,
+			);
+			path = GuillotineMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,9 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F997B7601B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				F9176C2E1B427ABB00B4CE1C /* ViewController.swift in Sources */,
 				F9176C2C1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld in Sources */,
 				F94A144D1B450F9700B301D9 /* VideoViewController.swift in Sources */,
+				F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */,
+				F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */,
+				F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */,
 				F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

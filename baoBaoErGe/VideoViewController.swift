@@ -8,6 +8,7 @@
 
 import UIKit
 import Persei
+import FlatUIColors
 
 class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -15,6 +16,7 @@ class VideoViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         let menu = MenuView()
+        menu.backgroundColor = FlatUIColors.greenSeaColor()
         var item = MenuItem(image: UIImage(named: "video_40.png")!)
         menu.items = [item, item,item]
         tableView.addSubview(menu)
