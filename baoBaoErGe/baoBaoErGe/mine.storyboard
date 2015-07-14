@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Video View Controller-->
         <scene sceneID="Hwg-Mh-OJ8">
             <objects>
-                <viewController id="yxu-qm-YZ7" sceneMemberID="viewController">
+                <viewController id="yxu-qm-YZ7" customClass="VideoViewController" customModule="baoBaoErGe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4vH-J8-UyP"/>
                         <viewControllerLayoutGuide type="bottom" id="Ntc-UF-h5h"/>
@@ -29,7 +29,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pc5-Ho-hL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="-49"/>
+            <point key="canvasLocation" x="530" y="-49"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZEN-nf-m6V">
@@ -47,7 +47,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUX-YK-S9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="-49"/>
+            <point key="canvasLocation" x="85" y="-36"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
