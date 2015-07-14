@@ -41,7 +41,7 @@ class VideoViewController: UIViewController{
     override func viewDidAppear(animated: Bool) {
         let statusbarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         self.view.backgroundColor = UIColor(red: 65.0 / 255.0, green: 100.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
-        menuButton1.frame = CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0)
+        menuButton1?.frame = CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0)
         
         
     }

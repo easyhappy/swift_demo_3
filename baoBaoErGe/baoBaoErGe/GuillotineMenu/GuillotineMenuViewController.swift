@@ -58,6 +58,7 @@ class GuillotineMenuViewController: UIViewController {
     
 // MARK: Actions
     func closeMenuButtonTapped() {
+        self.hostTitleText = "为什么"
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -80,7 +81,7 @@ class GuillotineMenuViewController: UIViewController {
         menuButton.transform = CGAffineTransformMakeRotation( ( 90 * CGFloat(M_PI) ) / 180 );
         
         testButton.addTarget(self, action: Selector("closeMenuButtonTapped"), forControlEvents: .TouchUpInside)
-        testButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
         self.view.addSubview(menuButton)
         
         if UIDevice.currentDevice().orientation == .LandscapeLeft || UIDevice.currentDevice().orientation == .LandscapeRight {
