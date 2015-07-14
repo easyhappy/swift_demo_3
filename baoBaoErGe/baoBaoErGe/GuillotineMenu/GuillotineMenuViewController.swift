@@ -13,6 +13,8 @@ class GuillotineMenuViewController: UIViewController {
     var hostNavigationBarHeight: CGFloat!
     var hostTitleText: NSString!
 
+    @IBOutlet weak var testButton: UIButton!
+    @IBOutlet weak var testLabel: UILabel!
     var menuButton: UIButton!
     var menuButtonLeadingConstraint: NSLayoutConstraint!
     var menuButtonTopConstraint: NSLayoutConstraint!
@@ -76,6 +78,9 @@ class GuillotineMenuViewController: UIViewController {
         menuButton.addTarget(self, action: Selector("closeMenuButtonTapped"), forControlEvents: .TouchUpInside)
         menuButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         menuButton.transform = CGAffineTransformMakeRotation( ( 90 * CGFloat(M_PI) ) / 180 );
+        
+        testButton.addTarget(self, action: Selector("closeMenuButtonTapped"), forControlEvents: .TouchUpInside)
+        testButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.view.addSubview(menuButton)
         
         if UIDevice.currentDevice().orientation == .LandscapeLeft || UIDevice.currentDevice().orientation == .LandscapeRight {
