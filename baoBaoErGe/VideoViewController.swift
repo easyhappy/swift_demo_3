@@ -15,22 +15,29 @@ class VideoViewController: UIViewController{
     @IBOutlet weak var menuButton1: UIButton!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    private let menuButtonLandscapeLeadingConstant: CGFloat = 1
+    private let menuButtonPortraitLeadingConstant: CGFloat = 7
+    private let hostNavigationBarHeightLandscape: CGFloat = 32
+    private let hostNavigationBarHeightPortrait: CGFloat = 44
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let menu = MenuView()
-        menu.backgroundColor = FlatUIColors.greenSeaColor()
         self.title = "是的么"
-        var item = MenuItem(image: UIImage(named: "video_40.png")!)
-       
-        menu.items = [item, item,item]
         let navBar = self.navigationController!.navigationBar
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+    
         self.view.backgroundColor = UIColor(red: 65.0 / 255.0, green: 100.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         //tableView.addSubview(menu)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let statusbarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+        menuButton1.frame.origin =  CGPoint(x: menuButtonPortraitLeadingConstant, y: -18)
     }
 //    
 //    @objc protocol GuillotineAnimationProtocol: NSObjectProtocol {
