@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FlatUIColors
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
-
+        var addStatusBar = UIView()
+        addStatusBar.frame = CGRectMake(0, 0, 400, 20);
+        addStatusBar.backgroundColor = FlatUIColors.greenSeaColor(); 
+        self.window?.rootViewController?.view .addSubview(addStatusBar)
         return true
     }
 

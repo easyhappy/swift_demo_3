@@ -22,13 +22,14 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="menuButton1" destination="PYT-VX-8dZ" id="MUL-36-NPJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qo-XQ-iI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1974" y="294"/>
+            <point key="canvasLocation" x="3288" y="468"/>
         </scene>
         <!--Guillotine Menu View Controller-->
         <scene sceneID="bx8-rh-dqS">
@@ -67,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5M-1t-TFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2833.5" y="294"/>
+            <point key="canvasLocation" x="4147.5" y="468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="os0-4K-QgI">
@@ -85,7 +86,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loC-5x-c4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="645" y="294"/>
+            <point key="canvasLocation" x="1959" y="468"/>
         </scene>
     </scenes>
     <resources>

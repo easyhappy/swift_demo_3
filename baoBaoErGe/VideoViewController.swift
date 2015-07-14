@@ -29,7 +29,10 @@ class VideoViewController: UIViewController{
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     
-        self.view.backgroundColor = UIColor(red: 65.0 / 255.0, green: 100.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
+        var addStatusBar = UIView()
+        addStatusBar.frame = CGRectMake(0, 0, 320, 20);
+        addStatusBar.backgroundColor = FlatUIColors.greenSeaColor()
+        self.view.addSubview(addStatusBar)
         //tableView.addSubview(menu)
 
         // Do any additional setup after loading the view.
@@ -37,7 +40,10 @@ class VideoViewController: UIViewController{
     
     override func viewDidAppear(animated: Bool) {
         let statusbarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
-        menuButton1.frame.origin =  CGPoint(x: menuButtonPortraitLeadingConstant, y: -18)
+        self.view.backgroundColor = UIColor(red: 65.0 / 255.0, green: 100.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
+        menuButton1.frame = CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0)
+        
+        
     }
 //    
 //    @objc protocol GuillotineAnimationProtocol: NSObjectProtocol {
