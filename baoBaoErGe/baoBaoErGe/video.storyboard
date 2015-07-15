@@ -8,28 +8,111 @@
         <scene sceneID="fZ4-Oo-p3h">
             <objects>
                 <viewController id="p7z-8x-SJy" customClass="VideoViewController" customModule="baoBaoErGe" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="V0x-hG-Rud">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="mlJ-9r-nHH">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PYT-VX-8dZ">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cfP-Tf-sQ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="CyS-84-qKA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l4D-Dv-sUC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="98f-k5-5rl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoTableCell" rowHeight="80" id="tBp-RB-Dz9" customClass="VideoTableViewCell" customModule="baoBaoErGe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tBp-RB-Dz9" id="VKn-RE-uca">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75g-yf-8jh">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="78" y="8" width="258" height="37"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放:100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zso-Pg-RRI">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="78" y="50" width="115" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vti-Nc-OlH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="75g-yf-8jh"/>
+                                                    <exclude reference="zso-Pg-RRI"/>
+                                                    <exclude reference="Vti-Nc-OlH"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="75g-yf-8jh"/>
+                                                    <include reference="zso-Pg-RRI"/>
+                                                    <include reference="Vti-Nc-OlH"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="Vti-Nc-OlH" id="P5R-J2-w3G"/>
+                                            <outlet property="nameLabel" destination="75g-yf-8jh" id="Gk9-LA-aUq"/>
+                                            <outlet property="playCountLabel" destination="zso-Pg-RRI" id="eke-A0-bu1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="44" width="400" height="548"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="p7z-8x-SJy" id="hFn-Nm-GMN"/>
+                                    <outlet property="delegate" destination="p7z-8x-SJy" id="zB6-SP-bPq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="98f-k5-5rl"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="98f-k5-5rl"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="iOT-aO-v1H">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="oT0-8g-kmv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dE3-Cd-kaB">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="contentEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="ic_menuRotated@3x.png"/>
-                                <connections>
-                                    <segue destination="9H1-b4-xc3" kind="custom" customClass="GuillotineMenuSegue" customModule="baoBaoErGe" customModuleProvider="target" id="fag-HZ-4dy"/>
-                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="menuButton1" destination="PYT-VX-8dZ" id="MUL-36-NPJ"/>
+                        <outlet property="tableView" destination="98f-k5-5rl" id="Ped-XP-6fA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qo-XQ-iI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3288" y="468"/>
+            <point key="canvasLocation" x="3399" y="468"/>
         </scene>
         <!--Guillotine Menu View Controller-->
         <scene sceneID="bx8-rh-dqS">
@@ -43,14 +126,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YZ-10-bKd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YZ-10-bKd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Button" image="baobaoerge.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="65" y="164" width="46" height="30"/>
+                                    <rect key="frame" x="65" y="164" width="115" height="60"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="MO6-5J-jbR" kind="unwind" unwindAction="didPickColorUnwind:" id="YcA-en-3Rn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxq-LZ-Zjx">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -82,8 +168,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5M-1t-TFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MO6-5J-jbR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4147.5" y="468"/>
+            <point key="canvasLocation" x="4170" y="468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="os0-4K-QgI">
@@ -105,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="baobaoerge.png" width="1024" height="1024"/>
         <image name="ic_menuRotated@3x.png" width="30" height="44"/>
     </resources>
 </document>

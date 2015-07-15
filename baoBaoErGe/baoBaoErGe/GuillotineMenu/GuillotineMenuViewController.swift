@@ -58,8 +58,11 @@ class GuillotineMenuViewController: UIViewController {
     
 // MARK: Actions
     func closeMenuButtonTapped() {
-        self.hostTitleText = "为什么"
-        self.dismissViewControllerAnimated(true, completion: nil)
+        CurrentTitle = "为什么"
+        self.dismissViewControllerAnimated(true, completion: {
+            _ in
+            self.presentedViewController?.title = "esssd" 
+        })
     }
     
     func setMenuButtonWithImage(image: UIImage) {
@@ -80,7 +83,7 @@ class GuillotineMenuViewController: UIViewController {
         menuButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         menuButton.transform = CGAffineTransformMakeRotation( ( 90 * CGFloat(M_PI) ) / 180 );
         
-        testButton.addTarget(self, action: Selector("closeMenuButtonTapped"), forControlEvents: .TouchUpInside)
+        //testButton.addTarget(self, action: Selector("closeMenuButtonTapped"), forControlEvents: .TouchUpInside)
         
         self.view.addSubview(menuButton)
         
