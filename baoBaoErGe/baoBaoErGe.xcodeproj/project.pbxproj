@@ -25,6 +25,7 @@
 		F9312FFC1B5391050080C72A /* ic_profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9312FF41B5391050080C72A /* ic_profile@3x.png */; };
 		F9312FFD1B5391050080C72A /* ic_settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9312FF51B5391050080C72A /* ic_settings@3x.png */; };
 		F93130031B55FCF50080C72A /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93130021B55FCF50080C72A /* VideoTableViewCell.swift */; };
+		F931300B1B561EEE0080C72A /* Extends.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931300A1B561EEE0080C72A /* Extends.swift */; };
 		F9372FB01B42D15300C34FF0 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = F9372FAF1B42D15300C34FF0 /* video.png */; };
 		F9372FB21B42D1F300C34FF0 /* video_40.png in Resources */ = {isa = PBXBuildFile; fileRef = F9372FB11B42D1F300C34FF0 /* video_40.png */; };
 		F9372FB41B42D23900C34FF0 /* video_20.png in Resources */ = {isa = PBXBuildFile; fileRef = F9372FB31B42D23900C34FF0 /* video_20.png */; };
@@ -75,6 +76,7 @@
 		F9312FF41B5391050080C72A /* ic_profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_profile@3x.png"; sourceTree = "<group>"; };
 		F9312FF51B5391050080C72A /* ic_settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_settings@3x.png"; sourceTree = "<group>"; };
 		F93130021B55FCF50080C72A /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		F931300A1B561EEE0080C72A /* Extends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extends.swift; path = ../Extends.swift; sourceTree = "<group>"; };
 		F9372FAF1B42D15300C34FF0 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
 		F9372FB11B42D1F300C34FF0 /* video_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_40.png; sourceTree = "<group>"; };
 		F9372FB31B42D23900C34FF0 /* video_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_20.png; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				F997B75C1B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift */,
 				F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */,
 				F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */,
+				F931300A1B561EEE0080C72A /* Extends.swift */,
 			);
 			path = GuillotineMenu;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */,
 				F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */,
 				F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */,
+				F931300B1B561EEE0080C72A /* Extends.swift in Sources */,
 				F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */,
 				F93130031B55FCF50080C72A /* VideoTableViewCell.swift in Sources */,
 			);

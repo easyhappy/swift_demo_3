@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_Persei 0
 #define COCOAPODS_VERSION_PATCH_Persei 1
 
+// Player
+#define COCOAPODS_POD_AVAILABLE_Player
+#define COCOAPODS_VERSION_MAJOR_Player 0
+#define COCOAPODS_VERSION_MINOR_Player 0
+#define COCOAPODS_VERSION_PATCH_Player 5
+
 // RBStoryboardLink
 #define COCOAPODS_POD_AVAILABLE_RBStoryboardLink
 #define COCOAPODS_VERSION_MAJOR_RBStoryboardLink 0

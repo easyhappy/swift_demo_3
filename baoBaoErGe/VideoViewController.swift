@@ -17,6 +17,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet var totalView: UIView!
     
     private let menuButtonLandscapeLeadingConstant: CGFloat = 1
     private let menuButtonPortraitLeadingConstant: CGFloat = 7
@@ -27,6 +28,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         
         let navBar = self.navigationController!.navigationBar
+        
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     
@@ -34,9 +36,14 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         addStatusBar.frame = CGRectMake(0, 0, 320, 20);
         addStatusBar.backgroundColor = FlatUIColors.greenSeaColor()
         self.view.addSubview(addStatusBar)
+
         //tableView.addSubview(menu)
+        self.view.setY(y: 80)
         self.title = "1-2岁"
         // Do any additional setup after loading the view.
+    }
+    override func viewWillDisappear(animated: Bool) {
+        self.totalView?.setY(y: 80)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +57,17 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("videoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
         cell.nameLabel.text = "1234"
+        cell.picView.image = UIImage(named: "baobaoerge.png")
+        cell.picView.contentMode = .ScaleAspectFill
+        cell.picView.clipsToBounds = true
+       
+        cell.picView.layer.cornerRadius = 60/2
+        cell.picView.layer.masksToBounds = true
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -59,13 +76,15 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         menuButton1?.frame = CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0)
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
-        destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
-        destinationVC.hostTitleText = ""
-        destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
-        destinationVC.setMenuButtonWithImage(menuButton1.imageView!.image!)
+        if (segue.identifier == "setVideoTypeIdentifier"){
+            let destinationVC = segue.destinationViewController as! GuillotineMenuViewController
+            destinationVC.hostNavigationBarHeight = self.navigationController!.navigationBar.frame.size.height
+            destinationVC.hostTitleText = ""
+            destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
+            destinationVC.setMenuButtonWithImage(menuButton1.imageView!.image!)
+        }else{
+        }
     }
     
     @IBAction func didPickColorUnwind(segue: UIStoryboardSegue) {

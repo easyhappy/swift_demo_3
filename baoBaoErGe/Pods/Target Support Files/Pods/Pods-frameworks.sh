@@ -51,11 +51,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'FlatUIColors.framework'
   install_framework 'Persei.framework'
+  install_framework 'Player.framework'
   install_framework 'RBStoryboardLink.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'FlatUIColors.framework'
   install_framework 'Persei.framework'
+  install_framework 'Player.framework'
   install_framework 'RBStoryboardLink.framework'
 fi
