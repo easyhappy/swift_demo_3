@@ -1,6 +1,6 @@
 //
 //  TableViewController.swift
-//  啊啊啊啊啊
+//  tesstg
 //
 //  Created by andyhu on 15/7/17.
 //  Copyright (c) 2015年 andyhu. All rights reserved.
@@ -41,15 +41,12 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("abc", forIndexPath: indexPath) as! TableViewCell
-
-        // Configure the cell...
-    
-        cell.a.image = UIImage(named: "2048-logo")
-        cell.d?.text = "aaaa"
+        let cell = tableView.dequeueReusableCellWithIdentifier("bc", forIndexPath: indexPath) as! TableViewCell
+        cell.a.image = UIImage(named: "baobaoerge.png")
+        cell.b.text = "ccc"
+        
         return cell
     }
-
 
     /*
     // Override to support conditional editing of the table view.

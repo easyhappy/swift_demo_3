@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="V1Z-Ik-5Vx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="McE-td-HdS">
+            <objects>
+                <tableViewController id="V1Z-Ik-5Vx" customClass="TableViewController" customModule="tesstg" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" id="o4J-Kn-IOt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="bc" rowHeight="82" id="2oM-ik-FPw" customClass="TableViewCell" customModule="tesstg" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2oM-ik-FPw" id="W6B-yw-VZp">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GMW-I9-MYd">
+                                            <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="Wnd-cb-eqi"/>
+                                                <constraint firstAttribute="height" constant="60" id="fdx-db-pmC"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ddafadf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhB-lv-iVo">
+                                            <rect key="frame" x="90" y="23" width="91" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="91" id="nf4-qb-ugB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GMW-I9-MYd" firstAttribute="centerY" secondItem="W6B-yw-VZp" secondAttribute="centerY" id="9Y0-2b-sSM"/>
+                                        <constraint firstItem="BhB-lv-iVo" firstAttribute="leading" secondItem="GMW-I9-MYd" secondAttribute="trailing" constant="20" id="RJc-kN-T3t"/>
+                                        <constraint firstItem="BhB-lv-iVo" firstAttribute="top" secondItem="W6B-yw-VZp" secondAttribute="topMargin" constant="15" id="YIr-0g-O0Z"/>
+                                        <constraint firstItem="GMW-I9-MYd" firstAttribute="leading" secondItem="W6B-yw-VZp" secondAttribute="leadingMargin" constant="-5" id="vV9-SQ-gcd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="a" destination="GMW-I9-MYd" id="Ujn-qK-9iV"/>
+                                    <outlet property="b" destination="BhB-lv-iVo" id="heQ-Hr-658"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="V1Z-Ik-5Vx" id="cQb-eK-Y3g"/>
+                            <outlet property="delegate" destination="V1Z-Ik-5Vx" id="OQo-n6-K2b"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PAP-L7-zDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="194" y="366"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
