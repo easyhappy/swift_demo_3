@@ -35,7 +35,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         self.view.addSubview(self.player.view)
         self.player.didMoveToParentViewController(self)
         self.player.playbackLoops = true
-        self.player.path = "http://7xjh8x.com1.z0.glb.clouddn.com/uploads/test.mp4"
+        self.player.path = "/Users/andyhu/Documents/mine/swift_demo_3/baoBaoErGe/baoBaoErGe/test.mp4"
         self.player.playFromBeginning()
         println("走到viewDidLoad")
     }
@@ -48,6 +48,9 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     func playerReady(player: Player){
         println("是的")
     }
+    
+    
+    
     func playerPlaybackStateDidChange(player: Player){}
     func playerBufferingStateDidChange(player: Player){}
     
