@@ -39,6 +39,7 @@
 		F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */; };
 		F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */; };
 		F997B7641B4DEA770090ED74 /* video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F997B7631B4DEA770090ED74 /* video.storyboard */; };
+		F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuViewController.swift; sourceTree = "<group>"; };
 		F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F997B7631B4DEA770090ED74 /* video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = video.storyboard; sourceTree = "<group>"; };
+		F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		F99FD7AC1B5CA0D000BA87DF /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,7 @@
 				F997B75A1B4B82DC0090ED74 /* GuillotineMenu */,
 				F94A144C1B450F9700B301D9 /* VideoViewController.swift */,
 				F93130021B55FCF50080C72A /* VideoTableViewCell.swift */,
+				F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */,
 				F9176C281B427ABB00B4CE1C /* AppDelegate.swift */,
 				F9176C2D1B427ABB00B4CE1C /* ViewController.swift */,
 				F997B7631B4DEA770090ED74 /* video.storyboard */,
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				F94A14481B44F28700B301D9 /* star-7.png */,
+				F99FD7AC1B5CA0D000BA87DF /* test.mp4 */,
 				F94A14361B442AE100B301D9 /* baobaoerge.png */,
 				F9312FEE1B5391050080C72A /* content_1@3x.png */,
 				F9312FEF1B5391050080C72A /* content_2@3x.png */,
@@ -394,6 +399,7 @@
 				F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */,
 				F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */,
 				F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */,
+				F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */,
 				F931300B1B561EEE0080C72A /* Extends.swift in Sources */,
 				F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */,
 				F93130031B55FCF50080C72A /* VideoTableViewCell.swift in Sources */,

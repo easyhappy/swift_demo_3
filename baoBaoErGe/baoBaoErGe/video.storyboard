@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="400" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoTableCell" rowHeight="91" id="Ugf-ZF-iLm" customClass="VideoTableViewCell" customModule="baoBaoErGe" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="videoTableCell" rowHeight="91" id="Ugf-ZF-iLm" customClass="VideoTableViewCell" customModule="baoBaoErGe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ugf-ZF-iLm" id="PJa-wI-UBK">
@@ -47,7 +47,7 @@
                                             <outlet property="nameLabel" destination="q7A-Sc-zky" id="Vea-Tc-gqU"/>
                                             <outlet property="picView" destination="sX3-jV-a4e" id="ltQ-ut-Hc5"/>
                                             <outlet property="playCountLabel" destination="gl5-9K-LRp" id="J0H-jp-fg7"/>
-                                            <segue destination="1R8-33-khC" kind="push" id="oDC-1b-DeD"/>
+                                            <segue destination="2DK-eJ-u94" kind="push" id="lrS-Aa-ljj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -82,6 +82,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qo-XQ-iI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="443"/>
+        </scene>
+        <!--Video Player View Controller-->
+        <scene sceneID="IM9-sT-b70">
+            <objects>
+                <viewController id="2DK-eJ-u94" customClass="VideoPlayerViewController" customModule="baoBaoErGe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xYJ-Bd-KH2"/>
+                        <viewControllerLayoutGuide type="bottom" id="aQw-YA-6oa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XUn-JH-Q37">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kus-24-uHl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8St-WW-NWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2261" y="1160"/>
         </scene>
         <!--Guillotine Menu View Controller-->
         <scene sceneID="bx8-rh-dqS">
@@ -122,25 +141,6 @@
                 <exit id="MO6-5J-jbR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2250" y="443"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="l4j-cX-e0x">
-            <objects>
-                <viewController id="1R8-33-khC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ocb-gj-cqP"/>
-                        <viewControllerLayoutGuide type="bottom" id="9mN-Ke-UD8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HJq-Z2-7Th">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="gWR-d9-Fja"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ist-9A-Ihi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2242" y="1159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="os0-4K-QgI">
