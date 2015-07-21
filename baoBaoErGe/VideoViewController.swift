@@ -9,6 +9,7 @@
 import UIKit
 import Persei
 import FlatUIColors
+import Alamofire
 
 var CurrentTitle = "是的"
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -85,6 +86,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
             destinationVC.setMenuButtonWithImage(menuButton1.imageView!.image!)
         }else{
+            
         }
     }
     

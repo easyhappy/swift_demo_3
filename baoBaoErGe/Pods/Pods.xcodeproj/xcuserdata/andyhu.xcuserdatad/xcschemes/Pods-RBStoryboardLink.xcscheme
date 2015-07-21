@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "123B2BD53314CCE89EA72A97"
+               BlueprintIdentifier = "5FAD53EF912759519D1D643B"
                BuildableName = "RBStoryboardLink.framework"
                BlueprintName = "Pods-RBStoryboardLink"
                ReferencedContainer = "container:Pods.xcodeproj">

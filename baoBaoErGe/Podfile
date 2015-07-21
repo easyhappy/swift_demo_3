@@ -7,3 +7,6 @@ pod "RBStoryboardLink", "0.1.0"
 pod 'FlatUIColors'
 pod 'Persei', '~> 1.0.1'
 pod 'Player'
+pod 'GradientCircularProgress', :git => 'https://github.com/keygx/GradientCircularProgress'
+pod 'KYCircularProgress'
+pod 'Spring', '~> 1.0.3'

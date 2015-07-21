@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-GradientCircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KYCircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Persei.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Spring.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>123B2BD53314CCE89EA72A97</key>
+		<key>1897867FF3068D675575CA19</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DF31BBC22827A8C7435E46F</key>
+		<key>3A9C5209A341A567930E0A1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>601F2211C13397437C477B2C</key>
+		<key>3CDD8C0424822FEB10DE32E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>695102B2FE1F2BC64E1AD417</key>
+		<key>430DCEDC8E2835E8D2FCE4D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7CBEE738A655F63ED43C12D6</key>
+		<key>5FAD53EF912759519D1D643B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2DC1CC1272CE25C0DA0676A</key>
+		<key>6A9350A63FF5EAB5DD6F86AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7F9FEF428E70F0CE4B0DC622</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB240D075769AF68C5943143</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B26DC82BC626788A86BFB273</key>
 		<dict>
 			<key>primary</key>
 			<true/>

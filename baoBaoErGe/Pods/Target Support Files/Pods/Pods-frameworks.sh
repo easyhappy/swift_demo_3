@@ -50,14 +50,20 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'FlatUIColors.framework'
+  install_framework 'GradientCircularProgress.framework'
+  install_framework 'KYCircularProgress.framework'
   install_framework 'Persei.framework'
   install_framework 'Player.framework'
   install_framework 'RBStoryboardLink.framework'
+  install_framework 'Spring.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
   install_framework 'FlatUIColors.framework'
+  install_framework 'GradientCircularProgress.framework'
+  install_framework 'KYCircularProgress.framework'
   install_framework 'Persei.framework'
   install_framework 'Player.framework'
   install_framework 'RBStoryboardLink.framework'
+  install_framework 'Spring.framework'
 fi
