@@ -10,12 +10,13 @@
 		2345FB7FB66BBB3492229B0B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787E477C35C8277A215E5ED5 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9036B061B43B02C005F79E3 /* test_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F9036B051B43B02C005F79E3 /* test_icon.png */; };
 		F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9176C281B427ABB00B4CE1C /* AppDelegate.swift */; };
-		F9176C2C1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9176C2A1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld */; };
 		F9176C2E1B427ABB00B4CE1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9176C2D1B427ABB00B4CE1C /* ViewController.swift */; };
 		F9176C311B427ABB00B4CE1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9176C2F1B427ABB00B4CE1C /* Main.storyboard */; };
 		F9176C331B427ABB00B4CE1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9176C321B427ABB00B4CE1C /* Images.xcassets */; };
 		F9176C361B427ABB00B4CE1C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9176C341B427ABB00B4CE1C /* LaunchScreen.xib */; };
 		F9176C421B427ABB00B4CE1C /* baoBaoErGeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9176C411B427ABB00B4CE1C /* baoBaoErGeTests.swift */; };
+		F92C562E1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F92C562C1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld */; };
+		F92C56301B5E205600AAD5A6 /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */; };
 		F9312FF61B5391050080C72A /* content_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9312FEE1B5391050080C72A /* content_1@3x.png */; };
 		F9312FF71B5391050080C72A /* content_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9312FEF1B5391050080C72A /* content_2@3x.png */; };
 		F9312FF81B5391050080C72A /* ic_activity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9312FF01B5391050080C72A /* ic_activity@3x.png */; };
@@ -60,7 +61,6 @@
 		F9176C231B427ABB00B4CE1C /* baoBaoErGe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baoBaoErGe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9176C271B427ABB00B4CE1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9176C281B427ABB00B4CE1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9176C2B1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = baoBaoErGe.xcdatamodel; sourceTree = "<group>"; };
 		F9176C2D1B427ABB00B4CE1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9176C301B427ABB00B4CE1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9176C321B427ABB00B4CE1C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -68,6 +68,8 @@
 		F9176C3B1B427ABB00B4CE1C /* baoBaoErGeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = baoBaoErGeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9176C401B427ABB00B4CE1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9176C411B427ABB00B4CE1C /* baoBaoErGeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baoBaoErGeTests.swift; sourceTree = "<group>"; };
+		F92C562D1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = baoBaoErGe.xcdatamodel; sourceTree = "<group>"; };
+		F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
 		F9312FEE1B5391050080C72A /* content_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "content_1@3x.png"; sourceTree = "<group>"; };
 		F9312FEF1B5391050080C72A /* content_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "content_2@3x.png"; sourceTree = "<group>"; };
 		F9312FF01B5391050080C72A /* ic_activity@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_activity@3x.png"; sourceTree = "<group>"; };
@@ -163,9 +165,10 @@
 				F997B7631B4DEA770090ED74 /* video.storyboard */,
 				F9176C2F1B427ABB00B4CE1C /* Main.storyboard */,
 				F94A14461B44EFE700B301D9 /* mine.storyboard */,
+				F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */,
+				F92C562C1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld */,
 				F9176C321B427ABB00B4CE1C /* Images.xcassets */,
 				F9176C341B427ABB00B4CE1C /* LaunchScreen.xib */,
-				F9176C2A1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld */,
 				F9176C261B427ABB00B4CE1C /* Supporting Files */,
 			);
 			path = baoBaoErGe;
@@ -394,13 +397,14 @@
 			files = (
 				F997B7601B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				F9176C2E1B427ABB00B4CE1C /* ViewController.swift in Sources */,
-				F9176C2C1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld in Sources */,
 				F94A144D1B450F9700B301D9 /* VideoViewController.swift in Sources */,
 				F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */,
 				F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */,
 				F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */,
 				F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */,
 				F931300B1B561EEE0080C72A /* Extends.swift in Sources */,
+				F92C56301B5E205600AAD5A6 /* VideoEntity.swift in Sources */,
+				F92C562E1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld in Sources */,
 				F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */,
 				F93130031B55FCF50080C72A /* VideoTableViewCell.swift in Sources */,
 			);
@@ -616,12 +620,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F9176C2A1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodeld */ = {
+		F92C562C1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F9176C2B1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodel */,
+				F92C562D1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodel */,
 			);
-			currentVersion = F9176C2B1B427ABB00B4CE1C /* baoBaoErGe.xcdatamodel */;
+			currentVersion = F92C562D1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodel */;
 			path = baoBaoErGe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

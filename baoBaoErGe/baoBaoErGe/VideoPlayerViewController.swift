@@ -93,8 +93,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
             (request, response, _, error) in
             println(NSSearchPathDirectory.DocumentationDirectory)
                 self.halfCircularProgress.progress = Double(1.0)
-            
-                sleep(1)
+
                 UIView.animateWithDuration(0.1, animations: {
                     self.halfCircularProgress.removeFromSuperview()
                     self.player.playFromBeginning()

@@ -54,3 +54,9 @@
 #define COCOAPODS_VERSION_MINOR_Spring 0
 #define COCOAPODS_VERSION_PATCH_Spring 3
 
+// SwiftRecord
+#define COCOAPODS_POD_AVAILABLE_SwiftRecord
+#define COCOAPODS_VERSION_MAJOR_SwiftRecord 0
+#define COCOAPODS_VERSION_MINOR_SwiftRecord 0
+#define COCOAPODS_VERSION_PATCH_SwiftRecord 3
+

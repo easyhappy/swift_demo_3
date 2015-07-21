@@ -56,6 +56,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Player.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'Spring.framework'
+  install_framework 'SwiftRecord.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Alamofire.framework'
@@ -66,4 +67,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Player.framework'
   install_framework 'RBStoryboardLink.framework'
   install_framework 'Spring.framework'
+  install_framework 'SwiftRecord.framework'
 fi

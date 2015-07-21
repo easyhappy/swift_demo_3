@@ -10,6 +10,7 @@ import UIKit
 import Persei
 import FlatUIColors
 import Alamofire
+import SwiftRecord
 
 var CurrentTitle = "是的"
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -27,7 +28,11 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var video = VideoEntity.create(properties: ["name": "贝贝"]) as! VideoEntity
+//        video.name = "小贝"
+//        video.save()
+        var videos = VideoEntity.all() as![VideoEntity]
+        println(videos)
         let navBar = self.navigationController!.navigationBar
         
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
