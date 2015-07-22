@@ -79,7 +79,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         self.view.addSubview(self.player.view)
         self.player.didMoveToParentViewController(self)
         self.player.playbackLoops = true
-        self.player.path = "/Users/andyhu/Documents/mine/swift_demo_3/baoBaoErGe/baoBaoErGe/test.mp4"
+        self.player.path = "http://7nj0n6.com1.z0.glb.clouddn.com/videosTrickorTreat.mp4"
         //self.player.playFromBeginning()
         println("走到viewDidLoad")
         configureHalfCircularProgress()
