@@ -41,6 +41,7 @@
 		F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */; };
 		F997B7641B4DEA770090ED74 /* video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F997B7631B4DEA770090ED74 /* video.storyboard */; };
 		F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */; };
+		F9CC92441B62168B0056C633 /* er_ge.csv in Resources */ = {isa = PBXBuildFile; fileRef = F9CC92431B62168B0056C633 /* er_ge.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F997B7631B4DEA770090ED74 /* video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = video.storyboard; sourceTree = "<group>"; };
 		F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		F99FD7AC1B5CA0D000BA87DF /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
+		F9CC92431B62168B0056C633 /* er_ge.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = er_ge.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		F9176C261B427ABB00B4CE1C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F9CC92431B62168B0056C633 /* er_ge.csv */,
 				F94A14481B44F28700B301D9 /* star-7.png */,
 				F99FD7AC1B5CA0D000BA87DF /* test.mp4 */,
 				F94A14361B442AE100B301D9 /* baobaoerge.png */,
@@ -321,6 +324,7 @@
 				F9312FFC1B5391050080C72A /* ic_profile@3x.png in Resources */,
 				F9312FF81B5391050080C72A /* ic_activity@3x.png in Resources */,
 				F9312FF61B5391050080C72A /* content_1@3x.png in Resources */,
+				F9CC92441B62168B0056C633 /* er_ge.csv in Resources */,
 				F9312FF71B5391050080C72A /* content_2@3x.png in Resources */,
 				F9312FFD1B5391050080C72A /* ic_settings@3x.png in Resources */,
 				F94A14371B442AE100B301D9 /* baobaoerge.png in Resources */,

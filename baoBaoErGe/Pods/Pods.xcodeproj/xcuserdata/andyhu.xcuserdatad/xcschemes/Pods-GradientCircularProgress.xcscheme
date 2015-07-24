@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "205FEA047E6A9A2CFFF3C2FA"
+               BlueprintIdentifier = "5F96D14E7DFF78B8D22564F3"
                BuildableName = "GradientCircularProgress.framework"
                BlueprintName = "Pods-GradientCircularProgress"
                ReferencedContainer = "container:Pods.xcodeproj">

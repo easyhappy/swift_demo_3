@@ -11,6 +11,7 @@ import Persei
 import FlatUIColors
 import Alamofire
 import SwiftRecord
+import SwiftCSV
 
 var CurrentTitle = "是的"
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -25,16 +26,34 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     private let menuButtonPortraitLeadingConstant: CGFloat = 7
     private let hostNavigationBarHeightLandscape: CGFloat = 32
     private let hostNavigationBarHeightPortrait: CGFloat = 44
+    var erGes: [NSArray] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var video = VideoEntity.create(properties: ["name": "贝贝"]) as! VideoEntity
-//        video.name = "小贝"
-//        video.save()
-        var videos = VideoEntity.all() as![VideoEntity]
-        println(videos)
+//        var video = VideoEntity.create(properties: ["name": "贝贝"]) as! VideoEntity
+////        video.name = "小贝"
+////        video.save()
+//        var videos = VideoEntity.all() as![VideoEntity]
+//        println(videos)
         let navBar = self.navigationController!.navigationBar
         
+
+        let file = "er_ge.csv"
+        var path = NSBundle.mainBundle().pathForResource("er_ge", ofType: "csv")
+        let text2 = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
+        var erGesLines = text2!.componentsSeparatedByString("\n")
+        var line = ""
+        for line in erGesLines {
+            erGes.append(line.componentsSeparatedByString(";"))
+        }
+
+        // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
+        //     let dir = dirs[0] //documents directory
+        //     let path = dir.stringByAppendingPathComponent(file);
+        //     let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
+        //     println(text2)
+        // }
+
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     
@@ -53,7 +72,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return erGes.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -62,7 +81,9 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("videoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
-        cell.nameLabel.text = "1234"
+        var er_ge = erGes[indexPath.row]
+        cell.nameLabel.text = er_ge[0] as? String
+        cell.playCountLabel.text = (er_ge[4] as? String)! + "次"
         cell.picView.image = UIImage(named: "baobaoerge.png")
         cell.picView.contentMode = .ScaleAspectFill
         cell.picView.clipsToBounds = true
