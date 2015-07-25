@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EC1373F5574D58F1B087852D"
+               BlueprintIdentifier = "3BBA3FFC37355FD60A1BCDD4"
                BuildableName = "Persei.framework"
                BlueprintName = "Pods-Persei"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -51,6 +51,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     private var fourColorCircularProgress: KYCircularProgress!
     private var starProgress: KYCircularProgress!
     private var progress: UInt8 = 0
+    var video_path = ""
+    var video_name = ""
+    var alamofireManager : Alamofire.Manager?
+    var er_ge: [String] = []
     @IBOutlet private weak var storyboardCircularProgress: KYCircularProgress!
     
     required init(coder aDecoder: NSCoder) {
@@ -60,8 +64,8 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = er_ge[0]
 
-        var destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory, domain: .UserDomainMask)
         //var gcp = GCProgress()
         
          //self.player.path = "test.mp4"
@@ -79,7 +83,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         self.view.addSubview(self.player.view)
         self.player.didMoveToParentViewController(self)
         self.player.playbackLoops = true
-        self.player.path = "http://7nj0n6.com1.z0.glb.clouddn.com/videos动物唱歌.mp4"
+        self.player.path = "http://7xjh8x.com1.z0.glb.clouddn.com/uploads/test.mp4"
         //self.player.playFromBeginning()
         println("走到viewDidLoad")
         configureHalfCircularProgress()
@@ -89,29 +93,51 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
 
         // create KYCircularProgress with gauge guide
         //var circularProgress = KYCircularProgress(frame: self.view.bounds, showProgressGuide: true)
-        Alamofire.download(.GET, "http://7xjh8x.com1.z0.glb.clouddn.com/uploads/test.mp4", destination).response{
-            (request, response, _, error) in
-            println(NSSearchPathDirectory.DocumentationDirectory)
-                self.halfCircularProgress.progress = Double(1.0)
-
-                UIView.animateWithDuration(0.1, animations: {
-                    self.halfCircularProgress.removeFromSuperview()
-                    self.player.playFromBeginning()
-                })
+        video_name = self.er_ge[6].componentsSeparatedByString("").last!
+        //video_name = "mama.mp4"
+        video_path = NSHomeDirectory() + "/Documents/" + video_name
+        var checkValidation = NSFileManager.defaultManager()
+        if (checkValidation.fileExistsAtPath(video_path)){
+            self.halfCircularProgress.removeFromSuperview()
+            self.player.path = self.video_path
+            self.player.playFromBeginning()
+        }
+        else{
+            let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            configuration.timeoutIntervalForResource = 600 // seconds
             
-            }.progress{
-                (bytesRead, totalBytesRead, expectedBytesRead) in
-                println(totalBytesRead)
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                        // update some UI
-                    let ratio: CGFloat = CGFloat(totalBytesRead)*1.0 / CGFloat(expectedBytesRead)
-                    self.halfCircularProgress.progress = Double(ratio)
-                    
-                    self.view.addSubview(self.halfCircularProgress)
-                        
+            self.alamofireManager = Alamofire.Manager(configuration: configuration)
+            
+            var destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory, domain: .UserDomainMask)
+            alamofireManager!.download(.GET, self.er_ge[6], destination: destination).response{
+                (request, response, _, error) in
+                if (error == nil){
+                    println(NSSearchPathDirectory.DocumentationDirectory)
+                    self.halfCircularProgress.progress = Double(1.0)
+
+                    UIView.animateWithDuration(0.1, animations: {
+                        self.halfCircularProgress.removeFromSuperview()
+                        self.player.path = self.video_path
+                        self.player.playFromBeginning()
+                    })
+                }else{
+                    println("小贝")
                 }
                 
+                }.progress{
+                    (bytesRead, totalBytesRead, expectedBytesRead) in
+                    println(totalBytesRead)
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                            // update some UI
+                        let ratio: CGFloat = CGFloat(totalBytesRead)*1.0 / CGFloat(expectedBytesRead)
+                        self.halfCircularProgress.progress = Double(ratio)
+                        
+                        self.view.addSubview(self.halfCircularProgress)
+                            
+                    }
+                    
+            }
         }
     }
     

@@ -26,6 +26,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     private let menuButtonPortraitLeadingConstant: CGFloat = 7
     private let hostNavigationBarHeightLandscape: CGFloat = 32
     private let hostNavigationBarHeightPortrait: CGFloat = 44
+    var didSelectedRow = 0
     var erGes: [NSArray] = []
     
     override func viewDidLoad() {
@@ -44,7 +45,10 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         var erGesLines = text2!.componentsSeparatedByString("\n")
         var line = ""
         for line in erGesLines {
-            erGes.append(line.componentsSeparatedByString(";"))
+            var splits = line.componentsSeparatedByString(";")
+            if splits.count == 7{
+                erGes.append(splits)
+            }
         }
 
         // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
@@ -83,7 +87,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         var cell = tableView.dequeueReusableCellWithIdentifier("videoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
         var er_ge = erGes[indexPath.row]
         cell.nameLabel.text = er_ge[0] as? String
-        cell.playCountLabel.text = (er_ge[4] as? String)! + "次"
+        
+        cell.playCountLabel.text = "播放:" + (er_ge[4] as? String)! + "次"
         cell.picView.image = UIImage(named: "baobaoerge.png")
         cell.picView.contentMode = .ScaleAspectFill
         cell.picView.clipsToBounds = true
@@ -94,7 +99,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        didSelectedRow = indexPath.row
     }
     
     
@@ -112,7 +117,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationVC.view.backgroundColor = self.navigationController!.navigationBar.barTintColor
             destinationVC.setMenuButtonWithImage(menuButton1.imageView!.image!)
         }else{
-            
+            let destinationVC = segue.destinationViewController as! VideoPlayerViewController
+            destinationVC.er_ge = erGes[didSelectedRow] as! [String]
         }
     }
     
