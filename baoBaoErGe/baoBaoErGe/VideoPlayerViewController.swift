@@ -70,6 +70,13 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         
          //self.player.path = "test.mp4"
         self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
+        let navBar = self.navigationController!.navigationBar
+//        navBar.snp_makeConstraints{(make) -> Void in
+//            make.top.equalTo(self.view).offset(20)
+//            make.left.equalTo(self.view).offset(20)
+//        }
+//        navBar.frame =  CGRectMake(0, 0, self.view.bounds.height, 40)
+        //navBar.hidden = true
         self.player = Player()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -77,7 +84,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.player.delegate = self
-        self.player.view.frame = self.view.bounds
+        self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x-20, self.view.bounds.height, self.view.bounds.width)
         
         self.addChildViewController(self.player)
         self.view.addSubview(self.player.view)
@@ -151,6 +158,12 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     
     override func viewWillAppear(animated: Bool) {
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeLeft.rawValue, forKey: "orientation")
+        navigationController?.navigationBar.hidden = true // for navigation bar hide
+        UIApplication.sharedApplication().statusBarHidden=true;
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     

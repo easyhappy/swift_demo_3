@@ -92,11 +92,15 @@
                         <viewControllerLayoutGuide type="bottom" id="aQw-YA-6oa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XUn-JH-Q37">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kus-24-uHl"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8St-WW-NWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

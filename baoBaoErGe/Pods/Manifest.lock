@@ -6,6 +6,7 @@ PODS:
   - Persei (1.0.1)
   - Player (0.0.5)
   - RBStoryboardLink (0.1.0)
+  - SnapKit (0.12.0)
   - Spring (1.0.3)
   - SwiftCSV (0.1.2)
   - SwiftRecord (0.0.3)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Persei (~> 1.0.1)
   - Player
   - RBStoryboardLink (= 0.1.0)
+  - SnapKit
   - Spring (~> 1.0.3)
   - SwiftCSV
   - SwiftRecord
@@ -39,6 +41,7 @@ SPEC CHECKSUMS:
   Persei: 52d90b6f825162e81df1f0ee5559cfe5eee47475
   Player: b5611abde6be7b3eeeaf57537b3979cd7531daad
   RBStoryboardLink: 438a56a29ef5a433d33d2f045533d6ca8d1f7755
+  SnapKit: 00c388aa3bf1944c1b55472f31e841f75bd83882
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftCSV: 02827538421b00b5af3fba80ed32f8918554c757
   SwiftRecord: 6fe88ac2be3159f17b2c98cf6802a751d1deae67
