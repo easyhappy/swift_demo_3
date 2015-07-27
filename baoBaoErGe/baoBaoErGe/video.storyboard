@@ -76,7 +76,7 @@
                     <connections>
                         <outlet property="menuButton1" destination="IiF-GN-Wdq" id="dec-WH-z4o"/>
                         <outlet property="totalView" destination="l4D-Dv-sUC" id="tSZ-fH-FA8"/>
-                        <segue destination="2DK-eJ-u94" kind="push" identifier="playVideoIdentifier" id="hbT-Ga-yKY"/>
+                        <segue destination="2DK-eJ-u94" kind="custom" identifier="playVideoIdentifier" id="hbT-Ga-yKY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qo-XQ-iI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -96,6 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Kus-24-uHl"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>

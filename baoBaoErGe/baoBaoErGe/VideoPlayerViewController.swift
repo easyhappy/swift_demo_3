@@ -84,7 +84,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.player.delegate = self
-        self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x-20, self.view.bounds.height, self.view.bounds.width)
+        self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x+5, self.view.bounds.height, self.view.bounds.width-50)
         
         self.addChildViewController(self.player)
         self.view.addSubview(self.player.view)
@@ -157,9 +157,9 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     }
     
     override func viewWillAppear(animated: Bool) {
-        UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeLeft.rawValue, forKey: "orientation")
-        navigationController?.navigationBar.hidden = true // for navigation bar hide
-        UIApplication.sharedApplication().statusBarHidden=true;
+        UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+        //navigationController?.navigationBar.hidden = true // for navigation bar hide
+        //UIApplication.sharedApplication().statusBarHidden=true;
     }
     
     override func prefersStatusBarHidden() -> Bool {

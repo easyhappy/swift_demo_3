@@ -59,8 +59,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         //     println(text2)
         // }
 
-//        navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
-//        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
+        navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     
 //        var addStatusBar = UIView()
 //        addStatusBar.frame = CGRectMake(0, 0, 320, 20);
@@ -75,13 +75,18 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewWillAppear(animated: Bool) {
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
-        navigationController?.navigationBar.hidden = true // for navigation bar hide
-        UIApplication.sharedApplication().statusBarHidden=true; // for status bar hide
+        //navigationController?.navigationBar.hidden = true // for navigation bar hide
+        //UIApplication.sharedApplication().statusBarHidden=true; // for status bar hide
     }
     
     override func viewWillDisappear(animated: Bool) {
         self.totalView?.setY(y: 80)
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return erGes.count
