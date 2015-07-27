@@ -71,6 +71,11 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.title = "1-2岁"
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         self.totalView?.setY(y: 80)
     }
@@ -100,6 +105,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         didSelectedRow = indexPath.row
+        self.performSegueWithIdentifier("playVideoIdentifier", sender: self)
     }
     
     

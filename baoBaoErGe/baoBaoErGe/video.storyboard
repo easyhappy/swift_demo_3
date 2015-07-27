@@ -47,7 +47,6 @@
                                             <outlet property="nameLabel" destination="q7A-Sc-zky" id="Vea-Tc-gqU"/>
                                             <outlet property="picView" destination="sX3-jV-a4e" id="ltQ-ut-Hc5"/>
                                             <outlet property="playCountLabel" destination="gl5-9K-LRp" id="J0H-jp-fg7"/>
-                                            <segue destination="2DK-eJ-u94" kind="push" id="lrS-Aa-ljj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -77,6 +76,7 @@
                     <connections>
                         <outlet property="menuButton1" destination="IiF-GN-Wdq" id="dec-WH-z4o"/>
                         <outlet property="totalView" destination="l4D-Dv-sUC" id="tSZ-fH-FA8"/>
+                        <segue destination="2DK-eJ-u94" kind="push" identifier="playVideoIdentifier" id="hbT-Ga-yKY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qo-XQ-iI6" userLabel="First Responder" sceneMemberID="firstResponder"/>

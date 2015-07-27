@@ -93,7 +93,11 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
 
         // create KYCircularProgress with gauge guide
         //var circularProgress = KYCircularProgress(frame: self.view.bounds, showProgressGuide: true)
-        video_name = self.er_ge[6].componentsSeparatedByString("").last!
+        if self.er_ge[6].rangeOfString("%2F") != nil{
+            video_name = self.er_ge[6].componentsSeparatedByString("%2F").last!
+        }else{
+            video_name = self.er_ge[6].componentsSeparatedByString("/").last!
+        }
         //video_name = "mama.mp4"
         video_path = NSHomeDirectory() + "/Documents/" + video_name
         var checkValidation = NSFileManager.defaultManager()
@@ -103,6 +107,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
             self.player.playFromBeginning()
         }
         else{
+//            self.player.path = self.er_ge[6]
+//            self.player.playFromBeginning()
+//            self.halfCircularProgress.removeFromSuperview()
+//            return
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
             configuration.timeoutIntervalForResource = 600 // seconds
             
@@ -139,6 +147,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                     
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeLeft.rawValue, forKey: "orientation")
     }
     
     
