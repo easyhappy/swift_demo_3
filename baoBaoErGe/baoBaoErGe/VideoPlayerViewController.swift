@@ -69,18 +69,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
-        
-        self.player = Player()
-        self.player.delegate = self
-        self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x, self.view.bounds.height, self.view.bounds.width+2)
-        self.addChildViewController(self.player)
-        self.view.addSubview(self.player.view)
-        self.player.didMoveToParentViewController(self)
-        self.player.playbackLoops = false
-        self.player.delegate = self
 
-        
-        
         var backgroundImage = UIImage(named: "No-Zoom-effect.jpg")
         var imageView = UIImageView()
         imageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
@@ -106,6 +95,15 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         if (checkValidation.fileExistsAtPath(video_path)){
             gad_view = GADViewController(rootView: self)
             self.view.addSubview(gad_view)
+            self.player = Player()
+            self.player.delegate = self
+            self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x, self.view.bounds.height, self.view.bounds.width+2)
+            self.addChildViewController(self.player)
+            self.view.addSubview(self.player.view)
+            self.player.didMoveToParentViewController(self)
+            self.player.playbackLoops = false
+            self.player.delegate = self
+
             //self.player.path = self.video_path
             //self.player.playFromBeginning()
         }
@@ -147,6 +145,27 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
 
     override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue)
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if touch.view .isKindOfClass(GADViewController){
+            println("xiaobei")
+        }
+        let touchPoint = touch.locationInView(self.gad_view)
+        if touchPoint.y < self.gad_view.frame.height{
+            return false
+        }
+        return true
+        //        if CGRectContainsPoint(self.gameboard.bounds, touchPoint){
+        //            let centerX = CGRectGetMidX(self.gameboard.bounds)
+        //            let centerY = CGRectGetMidY(self.gameboard.bounds)
+        //            let xy2 = pow(centerX - touchPoint.x, 2.0) + pow(centerY - touchPoint.y, 2.0)
+        //            let radius2 = pow(CGRectGetWidth(self.gameboard.frame)/2,2)
+        //            if xy2 < radius2{
+        //                return true
+        //            }
+        //        }
+        //        return false
     }
 
     override func shouldAutorotate() -> Bool {

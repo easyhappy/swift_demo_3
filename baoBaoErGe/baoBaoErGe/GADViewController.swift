@@ -16,9 +16,10 @@ class GADViewController: UIView{
         var width: CGFloat = 400
         var height: CGFloat = 150
         // (0.0, 0.0, 375.0, 667.0)
-        tip.frame = CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4-20, width, 20)
-        bannerView.frame = CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4, width, height)
-        super.init(frame: CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4, width, height))
+        tip.frame = CGRectMake(0, 0, width, 20)
+        //bannerView.frame = CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4, width, height)
+        bannerView.frame = CGRectMake(0, 20, width, height)
+        super.init(frame: CGRectMake((rootView.view.frame.height-width)/2, (rootView.view.frame.width-height)/2, width, height))
         self.addSubview(bannerView)
         self.addSubview(tip)
         var request:GADRequest = GADRequest()
