@@ -144,6 +144,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         }else{
             let destinationVC = segue.destinationViewController as! VideoPlayerViewController
             destinationVC.er_ge = erGes[didSelectedRow] as! [String]
+            destinationVC.er_ges = self.erGes
+            destinationVC.currentIndexRow = didSelectedRow
         }
     }
     

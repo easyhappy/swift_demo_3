@@ -55,6 +55,9 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     var video_name = ""
     var alamofireManager : Alamofire.Manager?
     var er_ge: [String] = []
+    var currentIndexRow = 0
+    var er_ges: [NSArray] = []
+
     @IBOutlet private weak var storyboardCircularProgress: KYCircularProgress!
     
     required init(coder aDecoder: NSCoder) {
@@ -64,45 +67,17 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = er_ge[0]
-
-        //var gcp = GCProgress()
-        
-         //self.player.path = "test.mp4"
         self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
-        let navBar = self.navigationController!.navigationBar
-//        navBar.snp_makeConstraints{(make) -> Void in
-//            make.top.equalTo(self.view).offset(20)
-//            make.left.equalTo(self.view).offset(20)
-//        }
-//        navBar.frame =  CGRectMake(0, 0, self.view.bounds.height, 40)
-        //navBar.hidden = true
+        
         self.player = Player()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.player.delegate = self
-        
         self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x, self.view.bounds.height, self.view.bounds.width+2)
-        
         self.addChildViewController(self.player)
         self.view.addSubview(self.player.view)
         self.player.didMoveToParentViewController(self)
         self.player.playbackLoops = false
         self.player.delegate = self
-        //self.player.playFromBeginning()
-        println("走到viewDidLoad")
-        //configureHalfCircularProgress()
-        configureFourColorCircularProgress()
-//        configureFourColorCircularProgress()
-//        configureStarProgress()
 
-
-        // create KYCircularProgress with gauge guide
-        //var circularProgress = KYCircularProgress(frame: self.view.bounds, showProgressGuide: true)
-        
         
         
         var backgroundImage = UIImage(named: "No-Zoom-effect.jpg")
@@ -114,9 +89,11 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         //imageView.center = view.center
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
-        
-        
-        
+        setCurrentVideo()
+    }
+
+    func setCurrentVideo(){
+        self.title = er_ge[0]
         if self.er_ge[6].rangeOfString("%2F") != nil{
             video_name = self.er_ge[6].componentsSeparatedByString("%2F").last!
         }else{
@@ -126,11 +103,11 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         video_path = NSHomeDirectory() + "/Documents/" + video_name
         var checkValidation = NSFileManager.defaultManager()
         if (checkValidation.fileExistsAtPath(video_path)){
-            self.fourColorCircularProgress.removeFromSuperview()
             self.player.path = self.video_path
             self.player.playFromBeginning()
         }
         else{
+            configureFourColorCircularProgress()
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
             configuration.timeoutIntervalForResource = 600 // seconds
             
@@ -161,7 +138,6 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                         let ratio: CGFloat = CGFloat(totalBytesRead)*1.0 / CGFloat(expectedBytesRead)
                         self.fourColorCircularProgress.progress = Double(ratio)
                     }
-                    
             }
         }
     }
@@ -278,51 +254,19 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     func playerBufferingStateDidChange(player: Player){}
     
     func playerPlaybackWillStartFromBeginning(player: Player){}
+    
     func playerPlaybackDidEnd(player: Player){
-        println("播放完了")
+        currentIndexRow += 1
+        if currentIndexRow >= er_ges.count{
+            currentIndexRow = 0
+        }
+        er_ge = er_ges[currentIndexRow] as! [String]
+        setCurrentVideo()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
