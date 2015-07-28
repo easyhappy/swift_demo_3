@@ -10,6 +10,8 @@
 	<string>baoBaoErGe</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>2F39232C8568306AF645A5C39002B96F6B5FF222</key>
+		<string>github.com:austinzheng/swift-2048.git</string>
 		<key>BE80903C57DE7EF1E4E3CEBD86909F92056E63A0</key>
 		<string>github.com:easyhappy/swift_demo_3.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>baoBaoErGe/baoBaoErGe.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>2F39232C8568306AF645A5C39002B96F6B5FF222</key>
+		<string>../../baoBaoErGe/swift-2048</string>
 		<key>BE80903C57DE7EF1E4E3CEBD86909F92056E63A0</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>BE80903C57DE7EF1E4E3CEBD86909F92056E63A0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>swift_demo_3</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2F39232C8568306AF645A5C39002B96F6B5FF222</string>
+			<key>IDESourceControlWCCName</key>
+			<string>swift-2048</string>
 		</dict>
 	</array>
 </dict>

@@ -103,8 +103,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         video_path = NSHomeDirectory() + "/Documents/" + video_name
         var checkValidation = NSFileManager.defaultManager()
         if (checkValidation.fileExistsAtPath(video_path)){
-            self.player.path = self.video_path
-            self.player.playFromBeginning()
+            var gad_view = GADViewController(rootView: self)
+            self.view.addSubview(gad_view)
+            //self.player.path = self.video_path
+            //self.player.playFromBeginning()
         }
         else{
             configureFourColorCircularProgress()
@@ -266,7 +268,6 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

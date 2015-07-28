@@ -36,6 +36,8 @@
 		F94A14471B44EFE700B301D9 /* mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F94A14461B44EFE700B301D9 /* mine.storyboard */; };
 		F94A14491B44F28700B301D9 /* star-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F94A14481B44F28700B301D9 /* star-7.png */; };
 		F94A144D1B450F9700B301D9 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A144C1B450F9700B301D9 /* VideoViewController.swift */; };
+		F97CDCF41B67795B00F8C150 /* GADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97CDCF31B67795B00F8C150 /* GADViewController.swift */; };
+		F97CDCF81B677A5100F8C150 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97CDCF71B677A5100F8C150 /* GoogleMobileAds.framework */; };
 		F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75B1B4B82DC0090ED74 /* GuillotineMenuSegue.swift */; };
 		F997B7601B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75C1B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift */; };
 		F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */; };
@@ -91,6 +93,8 @@
 		F94A14461B44EFE700B301D9 /* mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mine.storyboard; sourceTree = "<group>"; };
 		F94A14481B44F28700B301D9 /* star-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-7.png"; sourceTree = "<group>"; };
 		F94A144C1B450F9700B301D9 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoViewController.swift; path = ../VideoViewController.swift; sourceTree = "<group>"; };
+		F97CDCF31B67795B00F8C150 /* GADViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADViewController.swift; sourceTree = "<group>"; };
+		F97CDCF71B677A5100F8C150 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		F997B75B1B4B82DC0090ED74 /* GuillotineMenuSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuSegue.swift; sourceTree = "<group>"; };
 		F997B75C1B4B82DC0090ED74 /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
 		F997B75D1B4B82DC0090ED74 /* GuillotineMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97CDCF81B677A5100F8C150 /* GoogleMobileAds.framework in Frameworks */,
 				2345FB7FB66BBB3492229B0B /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +145,7 @@
 		F9176C1A1B427ABB00B4CE1C = {
 			isa = PBXGroup;
 			children = (
+				F97CDCF71B677A5100F8C150 /* GoogleMobileAds.framework */,
 				F9176C251B427ABB00B4CE1C /* baoBaoErGe */,
 				F9176C3E1B427ABB00B4CE1C /* baoBaoErGeTests */,
 				F9176C241B427ABB00B4CE1C /* Products */,
@@ -168,6 +174,7 @@
 				F9176C2D1B427ABB00B4CE1C /* ViewController.swift */,
 				F997B7631B4DEA770090ED74 /* video.storyboard */,
 				F9176C2F1B427ABB00B4CE1C /* Main.storyboard */,
+				F97CDCF31B67795B00F8C150 /* GADViewController.swift */,
 				F94A14461B44EFE700B301D9 /* mine.storyboard */,
 				F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */,
 				F92C562C1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld */,
@@ -413,6 +420,7 @@
 				F931300B1B561EEE0080C72A /* Extends.swift in Sources */,
 				F92C56301B5E205600AAD5A6 /* VideoEntity.swift in Sources */,
 				F92C562E1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld in Sources */,
+				F97CDCF41B67795B00F8C150 /* GADViewController.swift in Sources */,
 				F9176C291B427ABB00B4CE1C /* AppDelegate.swift in Sources */,
 				F93130031B55FCF50080C72A /* VideoTableViewCell.swift in Sources */,
 			);
@@ -542,6 +550,10 @@
 			baseConfigurationReference = AC7D456FC26F7AAA19E5890E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = baoBaoErGe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -554,6 +566,10 @@
 			baseConfigurationReference = F65BFC73861020516B96B4A0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = baoBaoErGe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
