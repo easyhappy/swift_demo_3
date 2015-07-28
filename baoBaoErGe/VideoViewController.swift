@@ -15,6 +15,8 @@ import SwiftCSV
 import SnapKit
 
 var CurrentTitle = "是的"
+
+
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet weak var menuButton1: UIButton!
@@ -77,6 +79,15 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         //navigationController?.navigationBar.hidden = true // for navigation bar hide
         //UIApplication.sharedApplication().statusBarHidden=true; // for status bar hide
+        self.tabBarController?.tabBar.hidden = false
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
     }
     
     override func viewWillDisappear(animated: Bool) {

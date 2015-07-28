@@ -95,6 +95,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="AvX-Q8-L7h" appends="YES" id="NrP-fi-JyE"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="Kus-24-uHl"/>
@@ -104,6 +108,11 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8St-WW-NWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AvX-Q8-L7h">
+                    <connections>
+                        <action selector="tapped:" destination="2DK-eJ-u94" id="WJ4-Wh-tY3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2261" y="1160"/>
         </scene>

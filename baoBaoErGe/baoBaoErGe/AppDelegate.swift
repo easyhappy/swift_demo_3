@@ -27,6 +27,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().statusBarHidden=true; // for status bar hide
         return true
     }
+    
+//    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+//        
+//        return checkOrientation(self.window?.rootViewController)// This is the custom function that u need to set your custom view to each orientation which u want to lock
+//        
+//    }
+    
+//    func checkOrientation(viewController:UIViewController?)-> Int{
+//        
+//        if(viewController == nil){
+//            
+//            return Int(UIInterfaceOrientationMask.All.rawValue)//All means all orientation
+//            
+//        }else if (viewController is VideoPlayerViewController){
+//            
+//            return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue)//This is sign in view controller that i only want to set this to portrait mode only
+//            
+//        }else{
+//            
+//            return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+//        }
+//    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

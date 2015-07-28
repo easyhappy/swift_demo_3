@@ -84,22 +84,39 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.player.delegate = self
-        self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x+5, self.view.bounds.height, self.view.bounds.width-50)
+        
+        self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x, self.view.bounds.height, self.view.bounds.width+2)
         
         self.addChildViewController(self.player)
         self.view.addSubview(self.player.view)
         self.player.didMoveToParentViewController(self)
-        self.player.playbackLoops = true
-        self.player.path = "http://7xjh8x.com1.z0.glb.clouddn.com/uploads/test.mp4"
+        self.player.playbackLoops = false
+        self.player.delegate = self
         //self.player.playFromBeginning()
         println("走到viewDidLoad")
-        configureHalfCircularProgress()
+        //configureHalfCircularProgress()
+        configureFourColorCircularProgress()
 //        configureFourColorCircularProgress()
 //        configureStarProgress()
 
 
         // create KYCircularProgress with gauge guide
         //var circularProgress = KYCircularProgress(frame: self.view.bounds, showProgressGuide: true)
+        
+        
+        
+        var backgroundImage = UIImage(named: "No-Zoom-effect.jpg")
+        var imageView = UIImageView()
+        imageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        //imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        
+        
         if self.er_ge[6].rangeOfString("%2F") != nil{
             video_name = self.er_ge[6].componentsSeparatedByString("%2F").last!
         }else{
@@ -109,15 +126,11 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         video_path = NSHomeDirectory() + "/Documents/" + video_name
         var checkValidation = NSFileManager.defaultManager()
         if (checkValidation.fileExistsAtPath(video_path)){
-            self.halfCircularProgress.removeFromSuperview()
+            self.fourColorCircularProgress.removeFromSuperview()
             self.player.path = self.video_path
             self.player.playFromBeginning()
         }
         else{
-//            self.player.path = self.er_ge[6]
-//            self.player.playFromBeginning()
-//            self.halfCircularProgress.removeFromSuperview()
-//            return
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
             configuration.timeoutIntervalForResource = 600 // seconds
             
@@ -128,10 +141,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                 (request, response, _, error) in
                 if (error == nil){
                     println(NSSearchPathDirectory.DocumentationDirectory)
-                    self.halfCircularProgress.progress = Double(1.0)
+                    self.fourColorCircularProgress.progress = Double(1.0)
 
                     UIView.animateWithDuration(0.1, animations: {
-                        self.halfCircularProgress.removeFromSuperview()
+                        self.fourColorCircularProgress.removeFromSuperview()
                         self.player.path = self.video_path
                         self.player.playFromBeginning()
                     })
@@ -146,27 +159,42 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                     dispatch_async(dispatch_get_main_queue()) {
                             // update some UI
                         let ratio: CGFloat = CGFloat(totalBytesRead)*1.0 / CGFloat(expectedBytesRead)
-                        self.halfCircularProgress.progress = Double(ratio)
-                        
-                        self.view.addSubview(self.halfCircularProgress)
-                            
+                        self.fourColorCircularProgress.progress = Double(ratio)
                     }
                     
             }
         }
+    }
+
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.LandscapeRight.rawValue)
+    }
+
+    override func shouldAutorotate() -> Bool {
+        return false
     }
     
     override func viewWillAppear(animated: Bool) {
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
         //navigationController?.navigationBar.hidden = true // for navigation bar hide
         //UIApplication.sharedApplication().statusBarHidden=true;
+        self.tabBarController?.tabBar.hidden = true
+        
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
-    
+    @IBAction func tapped(sender: AnyObject){
+        if navigationController?.navigationBar.hidden == true{
+            navigationController?.navigationBar.hidden = false
+        }else{
+            navigationController?.navigationBar.hidden = true
+        }
+        
+        
+    }
     
     private func configureHalfCircularProgress() {
         let halfCircularProgressFrame = CGRectMake(0, 0, CGRectGetWidth(view.frame), CGRectGetHeight(view.frame))
@@ -196,12 +224,16 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     }
     
     private func configureFourColorCircularProgress() {
-        let fourColorCircularProgressFrame = CGRectMake(0, CGRectGetHeight(halfCircularProgress.frame), CGRectGetWidth(view.frame)/2, CGRectGetHeight(view.frame)/3)
+        let fourColorCircularProgressFrame = CGRectMake(0, 0, 120, 120)
         fourColorCircularProgress = KYCircularProgress(frame: fourColorCircularProgressFrame)
         
+        fourColorCircularProgress.frame.origin.x = self.view.frame.height/2 - CGRectGetMidX(fourColorCircularProgressFrame)
+        fourColorCircularProgress.frame.origin.y = self.view.frame.width/2 - CGRectGetMidY(fourColorCircularProgressFrame)
+        fourColorCircularProgress.lineWidth = 8.0
         fourColorCircularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
         
         view.addSubview(fourColorCircularProgress)
+        //self.view.backgroundColor = UIColor(patternImage: !)
     }
     
     private func configureStarProgress() {
@@ -242,13 +274,13 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         println("是的")
     }
     
-    
-    
     func playerPlaybackStateDidChange(player: Player){}
     func playerBufferingStateDidChange(player: Player){}
     
     func playerPlaybackWillStartFromBeginning(player: Player){}
-    func playerPlaybackDidEnd(player: Player){}
+    func playerPlaybackDidEnd(player: Player){
+        println("播放完了")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
