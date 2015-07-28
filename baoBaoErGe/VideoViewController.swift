@@ -29,6 +29,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     private let menuButtonPortraitLeadingConstant: CGFloat = 7
     private let hostNavigationBarHeightLandscape: CGFloat = 32
     private let hostNavigationBarHeightPortrait: CGFloat = 44
+    var gad_view: GADViewController!
     var didSelectedRow = 0
     var erGes: [NSArray] = []
     
@@ -63,7 +64,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-    
+        gad_view = GADViewController(rootView: self)
 //        var addStatusBar = UIView()
 //        addStatusBar.frame = CGRectMake(0, 0, 320, 20);
 //        addStatusBar.backgroundColor = FlatUIColors.greenSeaColor()
@@ -146,6 +147,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationVC.er_ge = erGes[didSelectedRow] as! [String]
             destinationVC.er_ges = self.erGes
             destinationVC.currentIndexRow = didSelectedRow
+            destinationVC.gad_view = gad_view
         }
     }
     

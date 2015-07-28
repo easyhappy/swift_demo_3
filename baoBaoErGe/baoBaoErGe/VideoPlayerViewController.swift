@@ -57,6 +57,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     var er_ge: [String] = []
     var currentIndexRow = 0
     var er_ges: [NSArray] = []
+    var gad_view: GADViewController!
 
     @IBOutlet private weak var storyboardCircularProgress: KYCircularProgress!
     
@@ -103,7 +104,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         video_path = NSHomeDirectory() + "/Documents/" + video_name
         var checkValidation = NSFileManager.defaultManager()
         if (checkValidation.fileExistsAtPath(video_path)){
-            var gad_view = GADViewController(rootView: self)
+            gad_view = GADViewController(rootView: self)
             self.view.addSubview(gad_view)
             //self.player.path = self.video_path
             //self.player.playFromBeginning()
@@ -162,16 +163,6 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     
     override func prefersStatusBarHidden() -> Bool {
         return true
-    }
-    
-    @IBAction func tapped(sender: AnyObject){
-        if navigationController?.navigationBar.hidden == true{
-            navigationController?.navigationBar.hidden = false
-        }else{
-            navigationController?.navigationBar.hidden = true
-        }
-        
-        
     }
     
     private func configureHalfCircularProgress() {

@@ -4,16 +4,23 @@ import GoogleMobileAds
 class GADViewController: UIView{
     
     var bannerView: GADBannerView!
+    var tip: UILabel!
     init(rootView: UIViewController) {
         bannerView = GADBannerView()
+        tip = UILabel()
+        tip.text = "正在加载中...."
+        tip.textAlignment = NSTextAlignment.Center
+        tip.textColor = UIColor.whiteColor()
         bannerView.rootViewController = rootView
-        bannerView.adUnitID = "ca-app-pub-9307633717110161/9204839139"
+        bannerView.adUnitID = "ca-app-pub-9813832992624910/7601701989"
         var width: CGFloat = 400
-        var height: CGFloat = 200
+        var height: CGFloat = 150
         // (0.0, 0.0, 375.0, 667.0)
+        tip.frame = CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4-20, width, 20)
         bannerView.frame = CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4, width, height)
         super.init(frame: CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4, width, height))
         self.addSubview(bannerView)
+        self.addSubview(tip)
         var request:GADRequest = GADRequest()
         request.testDevices = [""]
         bannerView.loadRequest(request)
