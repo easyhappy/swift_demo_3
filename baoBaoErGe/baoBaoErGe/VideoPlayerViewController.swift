@@ -96,13 +96,14 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     func doYourStuff(){
         // self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
          UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
-         self.player.playFromCurrentTime()
+         self.player?.playFromCurrentTime()
         // imageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
         // self.tabBarController?.tabBar.hidden = true
     }
 
     override func viewWillDisappear(animated: Bool) {
         gad_view.secondsDownTimer.invalidate()
+        self.player = nil
     }
 
     func setCurrentVideo(){

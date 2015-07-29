@@ -18,7 +18,7 @@ class GADViewController: UIView{
         tip.textAlignment = NSTextAlignment.Center
         tip.textColor = UIColor.blackColor()
         bannerView.rootViewController = rootView
-        bannerView.adUnitID = "ca-app-pub-9813832992624910/7601701989"
+        bannerView.adUnitID = "ca-app-pub-9307633717110161/4713933935"
         var width: CGFloat = 400
         var height: CGFloat = 150
         // (0.0, 0.0, 375.0, 667.0)
