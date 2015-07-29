@@ -101,6 +101,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         // self.tabBarController?.tabBar.hidden = true
     }
 
+    override func viewWillDisappear(animated: Bool) {
+        gad_view.secondsDownTimer.invalidate()
+    }
+
     func setCurrentVideo(){
         self.title = er_ge[0]
         if self.er_ge[6].rangeOfString("%2F") != nil{

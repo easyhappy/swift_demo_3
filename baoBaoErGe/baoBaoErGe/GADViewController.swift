@@ -45,6 +45,7 @@ class GADViewController: UIView{
         self.delegate = delegate
         secondsCountDown = 5
         self.hidden = false
+        numberImageView.image = UIImage(named: "5.png")
         secondsDownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "updateTimeLabel", userInfo: nil, repeats: true)
     }
 
