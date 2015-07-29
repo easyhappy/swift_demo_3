@@ -68,6 +68,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
+    
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+        
+        //        if self.window!.rootViewController!.presentedViewController is SecondViewController {
+        //
+        //            let secondController = self.window!.rootViewController!.presentedViewController as! SecondViewController
+        //
+        //            if secondController.isPresented {
+        //                return Int(UIInterfaceOrientationMask.All.rawValue);
+        //            } else {
+        //                return Int(UIInterfaceOrientationMask.Portrait.rawValue);
+        //            }
+        //        } else {
+        //            return Int(UIInterfaceOrientationMask.Portrait.rawValue);
+        //        }
+        //        
+        if self.window?.rootViewController is UITabBarController{
+//            if (self.window?.rootViewController as! UITabBarController).visibleViewController is VideoPlayerViewController{
+//                return  Int(UIInterfaceOrientationMask.LandscapeRight.rawValue);
+//            }
+        }
+        if self.window?.rootViewController is UITabBarController{
+            if (self.window?.rootViewController as! UITabBarController).selectedViewController?.childViewControllers.first?.visibleViewController is VideoPlayerViewController {
+                return  Int(UIInterfaceOrientationMask.LandscapeRight.rawValue);
+            }
+        }
+        return  Int(UIInterfaceOrientationMask.Portrait.rawValue);
+        
+    }
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.

@@ -148,6 +148,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationVC.er_ges = self.erGes
             destinationVC.currentIndexRow = didSelectedRow
             destinationVC.gad_view = gad_view
+             self.tabBarController?.tabBar.hidden = true
         }
     }
     

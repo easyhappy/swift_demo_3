@@ -58,20 +58,21 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     var currentIndexRow = 0
     var er_ges: [NSArray] = []
     var gad_view: GADViewController!
+    var imageView: UIImageView!
 
     @IBOutlet private weak var storyboardCircularProgress: KYCircularProgress!
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+        
         self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
-
-        var backgroundImage = UIImage(named: "No-Zoom-effect.jpg")
-        var imageView = UIImageView()
+        
+        var backgroundImage = UIImage(named: "clouds.png")
+        imageView = UIImageView()
         imageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
         imageView.contentMode = .ScaleAspectFill
         imageView.clipsToBounds = true
@@ -80,6 +81,15 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
         setCurrentVideo()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"doYourStuff", name:
+         UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+
+    func doYourStuff(){
+        // self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
+         UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+        // imageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
+        // self.tabBarController?.tabBar.hidden = true
     }
 
     func setCurrentVideo(){
@@ -173,10 +183,12 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     }
     
     override func viewWillAppear(animated: Bool) {
-        UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+        self.tabBarController?.tabBar.hidden = true
+        
+
+
         //navigationController?.navigationBar.hidden = true // for navigation bar hide
         //UIApplication.sharedApplication().statusBarHidden=true;
-        self.tabBarController?.tabBar.hidden = true
         
     }
     
