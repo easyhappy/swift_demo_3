@@ -46,6 +46,11 @@
 		F997B7641B4DEA770090ED74 /* video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F997B7631B4DEA770090ED74 /* video.storyboard */; };
 		F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */; };
 		F9B693D91B639C4F00D850DA /* er_ge.csv in Resources */ = {isa = PBXBuildFile; fileRef = F9B693D81B639C4F00D850DA /* er_ge.csv */; };
+		F9F5B86C1B68D0DD00E0C061 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B86B1B68D0DD00E0C061 /* 5.png */; };
+		F9F5B8711B68D62F00E0C061 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B86D1B68D62F00E0C061 /* 1.png */; };
+		F9F5B8721B68D62F00E0C061 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B86E1B68D62F00E0C061 /* 2.png */; };
+		F9F5B8731B68D62F00E0C061 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B86F1B68D62F00E0C061 /* 3.png */; };
+		F9F5B8741B68D62F00E0C061 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B8701B68D62F00E0C061 /* 4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +110,11 @@
 		F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		F99FD7AC1B5CA0D000BA87DF /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
 		F9B693D81B639C4F00D850DA /* er_ge.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = er_ge.csv; sourceTree = "<group>"; };
+		F9F5B86B1B68D0DD00E0C061 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		F9F5B86D1B68D62F00E0C061 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		F9F5B86E1B68D62F00E0C061 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		F9F5B86F1B68D62F00E0C061 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		F9F5B8701B68D62F00E0C061 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,9 +201,14 @@
 			isa = PBXGroup;
 			children = (
 				F97BAD491B687F7800785ACC /* clouds.png */,
+				F9F5B86D1B68D62F00E0C061 /* 1.png */,
+				F9F5B86E1B68D62F00E0C061 /* 2.png */,
+				F9F5B86F1B68D62F00E0C061 /* 3.png */,
+				F9F5B8701B68D62F00E0C061 /* 4.png */,
 				F94A14481B44F28700B301D9 /* star-7.png */,
 				F90790D01B66467000186447 /* No-Zoom-effect.jpg */,
 				F9B693D81B639C4F00D850DA /* er_ge.csv */,
+				F9F5B86B1B68D0DD00E0C061 /* 5.png */,
 				F99FD7AC1B5CA0D000BA87DF /* test.mp4 */,
 				F94A14361B442AE100B301D9 /* baobaoerge.png */,
 				F9312FEE1B5391050080C72A /* content_1@3x.png */,
@@ -326,15 +341,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9F5B8721B68D62F00E0C061 /* 2.png in Resources */,
 				F9036B061B43B02C005F79E3 /* test_icon.png in Resources */,
 				F9312FFA1B5391050080C72A /* ic_menu@3x.png in Resources */,
 				F9176C311B427ABB00B4CE1C /* Main.storyboard in Resources */,
 				F9176C361B427ABB00B4CE1C /* LaunchScreen.xib in Resources */,
+				F9F5B8711B68D62F00E0C061 /* 1.png in Resources */,
 				F94A14471B44EFE700B301D9 /* mine.storyboard in Resources */,
+				F9F5B86C1B68D0DD00E0C061 /* 5.png in Resources */,
+				F9F5B8741B68D62F00E0C061 /* 4.png in Resources */,
 				F9176C331B427ABB00B4CE1C /* Images.xcassets in Resources */,
 				F9372FB21B42D1F300C34FF0 /* video_40.png in Resources */,
 				F997B7641B4DEA770090ED74 /* video.storyboard in Resources */,
 				F9312FFC1B5391050080C72A /* ic_profile@3x.png in Resources */,
+				F9F5B8731B68D62F00E0C061 /* 3.png in Resources */,
 				F9312FF81B5391050080C72A /* ic_activity@3x.png in Resources */,
 				F9312FF61B5391050080C72A /* content_1@3x.png in Resources */,
 				F9B693D91B639C4F00D850DA /* er_ge.csv in Resources */,

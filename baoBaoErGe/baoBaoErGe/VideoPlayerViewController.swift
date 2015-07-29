@@ -81,6 +81,14 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
         setCurrentVideo()
+        self.player = Player()
+        self.player.delegate = self
+        self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x, self.view.bounds.height, self.view.bounds.width+2)
+        self.addChildViewController(self.player)
+        self.view.addSubview(self.player.view)
+        self.player.didMoveToParentViewController(self)
+        self.player.playbackLoops = false
+        self.player.delegate = self
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"doYourStuff", name:
          UIApplicationWillEnterForegroundNotification, object: nil)
     }
@@ -88,6 +96,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     func doYourStuff(){
         // self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
          UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+         self.player.playFromCurrentTime()
         // imageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
         // self.tabBarController?.tabBar.hidden = true
     }
@@ -102,20 +111,11 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         //video_name = "mama.mp4"
         video_path = NSHomeDirectory() + "/Documents/" + video_name
         var checkValidation = NSFileManager.defaultManager()
-        if (checkValidation.fileExistsAtPath(video_path)){
-            gad_view = GADViewController(rootView: self)
-            self.view.addSubview(gad_view)
-            self.player = Player()
-            self.player.delegate = self
-            self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x, self.view.bounds.height, self.view.bounds.width+2)
-            self.addChildViewController(self.player)
-            self.view.addSubview(self.player.view)
-            self.player.didMoveToParentViewController(self)
-            self.player.playbackLoops = false
-            self.player.delegate = self
 
-            //self.player.path = self.video_path
-            //self.player.playFromBeginning()
+        
+        if (checkValidation.fileExistsAtPath(video_path)){
+            gad_view.showGAD(self)
+            self.view.addSubview(gad_view)   
         }
         else{
             configureFourColorCircularProgress()
@@ -151,6 +151,11 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                     }
             }
         }
+    }
+
+    func playVideo(){
+        self.player.path = self.video_path
+        self.player.playFromBeginning()
     }
 
     override func supportedInterfaceOrientations() -> Int {
