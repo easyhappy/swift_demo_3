@@ -92,7 +92,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewWillDisappear(animated: Bool) {
-        self.totalView?.setY(y: 80)
+        //self.totalView?.setY(y: 80)
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -154,10 +154,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func didPickColorUnwind(segue: UIStoryboardSegue) {
-        println("dafafadfadfa")
         var sourceController = segue.sourceViewController as! GuillotineMenuViewController
         sourceController.closeMenuButtonTapped()
-        println("笑笑呗")
     }
 
     override func didReceiveMemoryWarning() {
@@ -168,7 +166,11 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
-
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
+    
     /*
     // MARK: - Navigation
 

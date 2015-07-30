@@ -183,6 +183,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         tempImageView = UIImageView()
         tempImageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
         setCurrentVideo()
+
         self.player = Player()
         self.player.delegate = self
         self.player.view.frame = CGRectMake(self.view.bounds.origin.y, self.view.bounds.origin.x, self.view.bounds.height, self.view.bounds.width+2)
@@ -190,7 +191,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         self.view.addSubview(self.player.view)
         self.player.didMoveToParentViewController(self)
         self.player.playbackLoops = false
-        self.player.delegate = self
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"doYourStuff", name:
          UIApplicationWillEnterForegroundNotification, object: nil)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("checkoutMainImageView"), userInfo: nil, repeats: true)
@@ -318,12 +319,6 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = true
-        
-
-
-        //navigationController?.navigationBar.hidden = true // for navigation bar hide
-        //UIApplication.sharedApplication().statusBarHidden=true;
-        
     }
     
     override func prefersStatusBarHidden() -> Bool {
