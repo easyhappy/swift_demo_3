@@ -60,6 +60,104 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     var gad_view: GADViewController!
     var imageView: UIImageView!
 
+    
+    var mainImageView: UIImageView!
+    var tempImageView: UIImageView!
+    
+    var lastPoint = CGPoint.zeroPoint
+    var red: CGFloat = 0.0
+    var green: CGFloat = 0.0
+    var blue: CGFloat = 0.0
+    var brushWidth: CGFloat = 10.0
+    var opacity: CGFloat = 1.0
+    var swiped = false
+    var EndTouch = true
+    var TimerCount = 0
+    
+    let colors: [(CGFloat, CGFloat, CGFloat)] = [
+        (0, 0, 0),
+        (105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
+        (1.0, 0, 0),
+        (0, 0, 1.0),
+        (51.0 / 255.0, 204.0 / 255.0, 1.0),
+        (102.0 / 255.0, 204.0 / 255.0, 0),
+        (102.0 / 255.0, 1.0, 0),
+        (160.0 / 255.0, 82.0 / 255.0, 45.0 / 255.0),
+        (1.0, 102.0 / 255.0, 0),
+        (1.0, 1.0, 0),
+        (1.0, 1.0, 1.0),
+    ]
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        swiped = false
+        if let touch = touches.first as? UITouch {
+            lastPoint = touch.locationInView(self.view)
+        }
+        EndTouch = false
+        TimerCount = 5
+    }
+    
+    func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
+        
+        // 1
+        UIGraphicsBeginImageContext(view.frame.size)
+        let context = UIGraphicsGetCurrentContext()
+        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        
+        // 2
+        CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
+        CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
+        
+        // 3
+        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineWidth(context, brushWidth)
+        CGContextSetRGBStrokeColor(context, red, green, blue, 1.0)
+        CGContextSetBlendMode(context, kCGBlendModeNormal)
+        
+        // 4
+        CGContextStrokePath(context)
+        
+        // 5
+        tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        tempImageView.alpha = opacity
+        UIGraphicsEndImageContext()
+        
+    }
+    
+    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
+        // 6
+        swiped = true
+        if let touch = touches.first as? UITouch {
+            let currentPoint = touch.locationInView(view)
+            drawLineFrom(lastPoint, toPoint: currentPoint)
+            
+            // 7
+            lastPoint = currentPoint
+            EndTouch = false
+            TimerCount = 5
+        }
+    }
+    
+    override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
+        
+        if !swiped {
+            // draw a single point
+            drawLineFrom(lastPoint, toPoint: lastPoint)
+        }
+        
+        // Merge tempImageView into mainImageView
+        UIGraphicsBeginImageContext(mainImageView.frame.size)
+        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
+        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
+        mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        tempImageView.image = nil
+        EndTouch = true
+        TimerCount = 5
+    }
+  
+    
     @IBOutlet private weak var storyboardCircularProgress: KYCircularProgress!
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -80,6 +178,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         //imageView.center = view.center
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
+        mainImageView = UIImageView()
+        mainImageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
+        tempImageView = UIImageView()
+        tempImageView.frame = CGRectMake(0, 0, self.view.frame.height, self.view.frame.width)
         setCurrentVideo()
         self.player = Player()
         self.player.delegate = self
@@ -91,6 +193,10 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         self.player.delegate = self
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"doYourStuff", name:
          UIApplicationWillEnterForegroundNotification, object: nil)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("checkoutMainImageView"), userInfo: nil, repeats: true)
+
+        self.view.addSubview(mainImageView)
+        self.view.addSubview(tempImageView)
     }
 
     func doYourStuff(){
@@ -102,11 +208,24 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     }
 
     override func viewWillDisappear(animated: Bool) {
-        gad_view.secondsDownTimer.invalidate()
+        gad_view?.secondsDownTimer.invalidate()
         self.player = nil
     }
 
+    func checkoutMainImageView(){
+        if EndTouch{
+            if TimerCount < 0{
+                self.mainImageView?.image = nil
+                EndTouch = false
+            }
+        }
+        TimerCount -= 1
+    }
+
     func setCurrentVideo(){
+        mainImageView?.image = nil
+        (red, green, blue) = colors[randomInRange(0...(colors.count-1))]
+        
         self.title = er_ge[0]
         if self.er_ge[6].rangeOfString("%2F") != nil{
             video_name = self.er_ge[6].componentsSeparatedByString("%2F").last!
@@ -134,12 +253,12 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                 (request, response, _, error) in
                 if (error == nil){
                     println(NSSearchPathDirectory.DocumentationDirectory)
-                    self.fourColorCircularProgress.progress = Double(1.0)
+                    self.fourColorCircularProgress?.progress = Double(1.0)
 
                     UIView.animateWithDuration(0.1, animations: {
-                        self.fourColorCircularProgress.removeFromSuperview()
-                        self.player.path = self.video_path
-                        self.player.playFromBeginning()
+                        self.fourColorCircularProgress?.removeFromSuperview()
+                        self.player?.path = self.video_path
+                        self.player?.playFromBeginning()
                     })
                 }else{
                     println("小贝")
@@ -156,6 +275,11 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                     }
             }
         }
+    }
+    
+    func randomInRange(range: Range<Int>) -> Int {
+        let count = UInt32(range.endIndex - range.startIndex)
+        return Int(arc4random_uniform(count)) + range.startIndex
     }
 
     func playVideo(){
