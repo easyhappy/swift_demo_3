@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_RBStoryboardLink 1
 #define COCOAPODS_VERSION_PATCH_RBStoryboardLink 0
 
+// ReachabilitySwift
+#define COCOAPODS_POD_AVAILABLE_ReachabilitySwift
+#define COCOAPODS_VERSION_MAJOR_ReachabilitySwift 1
+#define COCOAPODS_VERSION_MINOR_ReachabilitySwift 1
+#define COCOAPODS_VERSION_PATCH_ReachabilitySwift 0
+
 // SnapKit
 #define COCOAPODS_POD_AVAILABLE_SnapKit
 #define COCOAPODS_VERSION_MAJOR_SnapKit 0

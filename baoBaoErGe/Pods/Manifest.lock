@@ -7,6 +7,7 @@ PODS:
   - Persei (1.0.1)
   - Player (0.0.5)
   - RBStoryboardLink (0.1.0)
+  - ReachabilitySwift (1.1)
   - SnapKit (0.12.0)
   - Spring (1.0.3)
   - SwiftCSV (0.1.2)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - Persei (~> 1.0.1)
   - Player
   - RBStoryboardLink (= 0.1.0)
+  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SnapKit
   - Spring (~> 1.0.3)
   - SwiftCSV
@@ -29,11 +31,16 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   GradientCircularProgress:
     :git: https://github.com/keygx/GradientCircularProgress
+  ReachabilitySwift:
+    :git: https://github.com/ashleymills/Reachability.swift
 
 CHECKOUT OPTIONS:
   GradientCircularProgress:
     :commit: 1272b9732f6bac4e0071f53b68e048801beecc02
     :git: https://github.com/keygx/GradientCircularProgress
+  ReachabilitySwift:
+    :commit: 7e0180c2761db33bc88eef310ef6d7a79c7ea40e
+    :git: https://github.com/ashleymills/Reachability.swift
 
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
@@ -44,6 +51,7 @@ SPEC CHECKSUMS:
   Persei: 52d90b6f825162e81df1f0ee5559cfe5eee47475
   Player: b5611abde6be7b3eeeaf57537b3979cd7531daad
   RBStoryboardLink: 438a56a29ef5a433d33d2f045533d6ca8d1f7755
+  ReachabilitySwift: 1e53abddb01111deac0d229dabdb8bb043567b18
   SnapKit: 00c388aa3bf1944c1b55472f31e841f75bd83882
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftCSV: 02827538421b00b5af3fba80ed32f8918554c757

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF20C458EBDF29FC9CBDE890"
-               BuildableName = "KYCircularProgress.framework"
-               BlueprintName = "Pods-KYCircularProgress"
+               BlueprintIdentifier = "8A9615AA8027EFC4C1E5ADFE"
+               BuildableName = "ReachabilitySwift.framework"
+               BlueprintName = "Pods-ReachabilitySwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

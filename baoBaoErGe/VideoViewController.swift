@@ -14,6 +14,7 @@ import SwiftRecord
 import SwiftCSV
 import SnapKit
 import Haneke
+import ReachabilitySwift
 
 var CurrentTitle = "是的"
 
@@ -55,6 +56,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
                 erGes.append(splits)
             }
         }
+        
+
 
         // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
         //     let dir = dirs[0] //documents directory
@@ -77,12 +80,51 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                println("Reachable via WiFi")
+            } else {
+                println("Reachable via Cellular")
+            }
+        } else {
+            println("Not reachable")
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         //navigationController?.navigationBar.hidden = true // for navigation bar hide
         //UIApplication.sharedApplication().statusBarHidden=true; // for status bar hide
         self.tabBarController?.tabBar.hidden = false
+        
+        let reachability = Reachability.reachabilityForInternetConnection()
+        
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
+        
+        var message = ""
+        reachability.startNotifier()
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                message = "Reachable via WiFi"
+                println("Reachable via WiFi")
+            } else {
+                message = "Reachable via Cellular"
+                println("Reachable via Cellular")
+            }
+        } else {
+            message = "not reachable"
+            println("Not reachable")
+        }
+
+//        var alertViewController = UIAlertController(title: "test", message: message, preferredStyle: .Alert)
+//        alertViewController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+//        self.presentViewController(alertViewController, animated: true, completion: nil)
     }
+
     
     override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)

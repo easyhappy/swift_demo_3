@@ -14,3 +14,4 @@ pod 'SwiftRecord'
 pod "SwiftCSV"
 pod "SnapKit"
 pod 'HanekeSwift'
+pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
