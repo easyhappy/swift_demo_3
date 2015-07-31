@@ -56,10 +56,6 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
                 erGes.append(splits)
             }
         }
-        
-        MTA.trackPageViewBegin("videoList")
-
-
         // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
         //     let dir = dirs[0] //documents directory
         //     let path = dir.stringByAppendingPathComponent(file);
@@ -81,8 +77,6 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
-    
-    
     func reachabilityChanged(note: NSNotification) {
         
         let reachability = note.object as! Reachability
@@ -97,7 +91,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             println("Not reachable")
         }
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         //navigationController?.navigationBar.hidden = true // for navigation bar hide
@@ -108,6 +102,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
         
+
+
         var message = ""
         reachability.startNotifier()
         if reachability.isReachable() {
@@ -122,12 +118,18 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             message = "not reachable"
             println("Not reachable")
         }
+        
+        
 
 //        var alertViewController = UIAlertController(title: "test", message: message, preferredStyle: .Alert)
 //        alertViewController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
 //        self.presentViewController(alertViewController, animated: true, completion: nil)
     }
 
+    
+    override func viewDidDisappear(animated: Bool) {
+        
+    }
     
     override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
@@ -139,7 +141,9 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewWillDisappear(animated: Bool) {
         //self.totalView?.setY(y: 80)
-        MTA.trackPageViewEnd("videoList")
+        
+        MTA.trackPageViewEnd("videosList")
+        
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -182,6 +186,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         //self.view.backgroundColor = UIColor(red: 65.0 / 255.0, green: 100.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         menuButton1?.frame = CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0)
         menuButton1?.hidden = true
+        MTA.trackPageViewBegin("videosList")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

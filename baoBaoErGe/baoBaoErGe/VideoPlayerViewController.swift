@@ -199,6 +199,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         self.view.addSubview(mainImageView)
         self.view.addSubview(tempImageView)
     }
+    
 
     func doYourStuff(){
         // self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
@@ -209,8 +210,9 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     }
 
     override func viewWillDisappear(animated: Bool) {
-        gad_view?.secondsDownTimer.invalidate()
+        gad_view?.secondsDownTimer?.invalidate()
         self.player = nil
+        MTA.trackPageViewEnd("videoPlay")
     }
 
     func checkoutMainImageView(){
@@ -262,7 +264,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                         self.player?.playFromBeginning()
                     })
                 }else{
-                    println("小贝")
+                    MTA.trackError("\(error)")
                 }
                 
                 }.progress{
@@ -319,6 +321,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = true
+        MTA.trackPageViewBegin("videoPlay")
     }
     
     override func prefersStatusBarHidden() -> Bool {
