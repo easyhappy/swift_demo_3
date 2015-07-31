@@ -13,3 +13,4 @@ pod 'Spring', '~> 1.0.3'
 pod 'SwiftRecord'
 pod "SwiftCSV"
 pod "SnapKit"
+pod 'HanekeSwift'

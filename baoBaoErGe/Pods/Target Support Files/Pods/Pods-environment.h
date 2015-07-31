@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_GradientCircularProgress 0
 #define COCOAPODS_VERSION_PATCH_GradientCircularProgress 0
 
+// HanekeSwift
+#define COCOAPODS_POD_AVAILABLE_HanekeSwift
+#define COCOAPODS_VERSION_MAJOR_HanekeSwift 0
+#define COCOAPODS_VERSION_MINOR_HanekeSwift 9
+#define COCOAPODS_VERSION_PATCH_HanekeSwift 1
+
 // KYCircularProgress
 #define COCOAPODS_POD_AVAILABLE_KYCircularProgress
 #define COCOAPODS_VERSION_MAJOR_KYCircularProgress 0

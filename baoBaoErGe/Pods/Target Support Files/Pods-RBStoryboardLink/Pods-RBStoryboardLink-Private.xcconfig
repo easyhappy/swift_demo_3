@@ -2,7 +2,7 @@
 CONFIGURATION_BUILD_DIR = $PODS_FRAMEWORK_BUILD_PATH
 FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/RBStoryboardLink" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Alamofire" "${PODS_ROOT}/Headers/Public/FlatUIColors" "${PODS_ROOT}/Headers/Public/GradientCircularProgress" "${PODS_ROOT}/Headers/Public/KYCircularProgress" "${PODS_ROOT}/Headers/Public/Persei" "${PODS_ROOT}/Headers/Public/Player" "${PODS_ROOT}/Headers/Public/RBStoryboardLink" "${PODS_ROOT}/Headers/Public/SnapKit" "${PODS_ROOT}/Headers/Public/Spring" "${PODS_ROOT}/Headers/Public/SwiftCSV" "${PODS_ROOT}/Headers/Public/SwiftRecord"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/RBStoryboardLink" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Alamofire" "${PODS_ROOT}/Headers/Public/FlatUIColors" "${PODS_ROOT}/Headers/Public/GradientCircularProgress" "${PODS_ROOT}/Headers/Public/HanekeSwift" "${PODS_ROOT}/Headers/Public/KYCircularProgress" "${PODS_ROOT}/Headers/Public/Persei" "${PODS_ROOT}/Headers/Public/Player" "${PODS_ROOT}/Headers/Public/RBStoryboardLink" "${PODS_ROOT}/Headers/Public/SnapKit" "${PODS_ROOT}/Headers/Public/Spring" "${PODS_ROOT}/Headers/Public/SwiftCSV" "${PODS_ROOT}/Headers/Public/SwiftRecord"
 OTHER_LDFLAGS = ${PODS_RBSTORYBOARDLINK_OTHER_LDFLAGS} -ObjC
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
 PODS_ROOT = ${SRCROOT}

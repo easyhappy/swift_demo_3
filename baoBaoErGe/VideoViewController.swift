@@ -13,6 +13,7 @@ import Alamofire
 import SwiftRecord
 import SwiftCSV
 import SnapKit
+import Haneke
 
 var CurrentTitle = "是的"
 
@@ -114,7 +115,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.nameLabel.text = er_ge[0] as? String
         
         cell.playCountLabel.text = "播放:" + (er_ge[4] as? String)! + "次"
-        cell.picView.image = UIImage(named: "baobaoerge.png")
+        var url = NSURL(string: er_ge[2] as! String)
+        cell.picView.hnk_setImageFromURL(url!)
         cell.picView.contentMode = .ScaleAspectFill
         cell.picView.clipsToBounds = true
        
