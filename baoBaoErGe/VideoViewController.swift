@@ -57,6 +57,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
         }
         
+        MTA.trackPageViewBegin("videoList")
 
 
         // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
@@ -79,6 +80,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.title = "1-2岁"
         // Do any additional setup after loading the view.
     }
+    
+    
     
     func reachabilityChanged(note: NSNotification) {
         
@@ -136,6 +139,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewWillDisappear(animated: Bool) {
         //self.totalView?.setY(y: 80)
+        MTA.trackPageViewEnd("videoList")
     }
     
     override func prefersStatusBarHidden() -> Bool {

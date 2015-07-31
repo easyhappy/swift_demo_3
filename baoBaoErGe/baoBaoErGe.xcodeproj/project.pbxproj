@@ -46,6 +46,13 @@
 		F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */; };
 		F997B7641B4DEA770090ED74 /* video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F997B7631B4DEA770090ED74 /* video.storyboard */; };
 		F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */; };
+		F9B60C6D1B6B68A000202C7B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C6C1B6B68A000202C7B /* libz.dylib */; };
+		F9B60C6F1B6B68AA00202C7B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C6E1B6B68AA00202C7B /* libsqlite3.dylib */; };
+		F9B60C711B6B68B400202C7B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C701B6B68B400202C7B /* SystemConfiguration.framework */; };
+		F9B60C731B6B68C000202C7B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C721B6B68C000202C7B /* CoreTelephony.framework */; };
+		F9B60C751B6B68CA00202C7B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C741B6B68CA00202C7B /* AdSupport.framework */; };
+		F9B60C771B6B68D300202C7B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C761B6B68D300202C7B /* Security.framework */; };
+		F9B60C7D1B6B69BA00202C7B /* libmtasdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C7A1B6B69BA00202C7B /* libmtasdk.a */; };
 		F9F5B86C1B68D0DD00E0C061 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B86B1B68D0DD00E0C061 /* 5.png */; };
 		F9F5B8711B68D62F00E0C061 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B86D1B68D62F00E0C061 /* 1.png */; };
 		F9F5B8721B68D62F00E0C061 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F5B86E1B68D62F00E0C061 /* 2.png */; };
@@ -79,6 +86,7 @@
 		F9176C3B1B427ABB00B4CE1C /* baoBaoErGeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = baoBaoErGeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9176C401B427ABB00B4CE1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9176C411B427ABB00B4CE1C /* baoBaoErGeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = baoBaoErGeTests.swift; sourceTree = "<group>"; };
+		F91F531C1B6B726E002076E9 /* libmtasdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmtasdk.a; path = "../../../../Downloads/MTA iOS SDK 2/mta/mta-sdk-1.4.4/demo/sdk/libmtasdk.a"; sourceTree = "<group>"; };
 		F92C562D1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = baoBaoErGe.xcdatamodel; sourceTree = "<group>"; };
 		F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
 		F93122F81B6B21A80058525A /* er_ge.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = er_ge.csv; sourceTree = "<group>"; };
@@ -110,6 +118,16 @@
 		F997B7631B4DEA770090ED74 /* video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = video.storyboard; sourceTree = "<group>"; };
 		F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		F99FD7AC1B5CA0D000BA87DF /* test.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.mp4; sourceTree = "<group>"; };
+		F9B60C6C1B6B68A000202C7B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F9B60C6E1B6B68AA00202C7B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F9B60C701B6B68B400202C7B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F9B60C721B6B68C000202C7B /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F9B60C741B6B68CA00202C7B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		F9B60C761B6B68D300202C7B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F9B60C781B6B694C00202C7B /* baoBaoErGe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "baoBaoErGe-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F9B60C7A1B6B69BA00202C7B /* libmtasdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmtasdk.a; path = "../../../../../Downloads/MTA iOS SDK/mta/mta-sdk-1.4.4/demo/sdk/libmtasdk.a"; sourceTree = "<group>"; };
+		F9B60C7B1B6B69BA00202C7B /* MTA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTA.h; path = "../../../../../Downloads/MTA iOS SDK/mta/mta-sdk-1.4.4/demo/sdk/MTA.h"; sourceTree = "<group>"; };
+		F9B60C7C1B6B69BA00202C7B /* MTAConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTAConfig.h; path = "../../../../../Downloads/MTA iOS SDK/mta/mta-sdk-1.4.4/demo/sdk/MTAConfig.h"; sourceTree = "<group>"; };
 		F9F5B86B1B68D0DD00E0C061 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		F9F5B86D1B68D62F00E0C061 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		F9F5B86E1B68D62F00E0C061 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -122,6 +140,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B60C771B6B68D300202C7B /* Security.framework in Frameworks */,
+				F9B60C751B6B68CA00202C7B /* AdSupport.framework in Frameworks */,
+				F9B60C731B6B68C000202C7B /* CoreTelephony.framework in Frameworks */,
+				F9B60C711B6B68B400202C7B /* SystemConfiguration.framework in Frameworks */,
+				F9B60C7D1B6B69BA00202C7B /* libmtasdk.a in Frameworks */,
+				F9B60C6F1B6B68AA00202C7B /* libsqlite3.dylib in Frameworks */,
+				F9B60C6D1B6B68A000202C7B /* libz.dylib in Frameworks */,
 				F97CDCF81B677A5100F8C150 /* GoogleMobileAds.framework in Frameworks */,
 				2345FB7FB66BBB3492229B0B /* Pods.framework in Frameworks */,
 			);
@@ -140,6 +165,13 @@
 		147858944B1083509767A99F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F91F531C1B6B726E002076E9 /* libmtasdk.a */,
+				F9B60C761B6B68D300202C7B /* Security.framework */,
+				F9B60C741B6B68CA00202C7B /* AdSupport.framework */,
+				F9B60C721B6B68C000202C7B /* CoreTelephony.framework */,
+				F9B60C701B6B68B400202C7B /* SystemConfiguration.framework */,
+				F9B60C6E1B6B68AA00202C7B /* libsqlite3.dylib */,
+				F9B60C6C1B6B68A000202C7B /* libz.dylib */,
 				787E477C35C8277A215E5ED5 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -178,6 +210,7 @@
 		F9176C251B427ABB00B4CE1C /* baoBaoErGe */ = {
 			isa = PBXGroup;
 			children = (
+				F9B60C791B6B699100202C7B /* MTA */,
 				F997B75A1B4B82DC0090ED74 /* GuillotineMenu */,
 				F94A144C1B450F9700B301D9 /* VideoViewController.swift */,
 				F93130021B55FCF50080C72A /* VideoTableViewCell.swift */,
@@ -187,6 +220,7 @@
 				F997B7631B4DEA770090ED74 /* video.storyboard */,
 				F9176C2F1B427ABB00B4CE1C /* Main.storyboard */,
 				F97CDCF31B67795B00F8C150 /* GADViewController.swift */,
+				F9B60C781B6B694C00202C7B /* baoBaoErGe-Bridging-Header.h */,
 				F94A14461B44EFE700B301D9 /* mine.storyboard */,
 				F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */,
 				F92C562C1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld */,
@@ -256,6 +290,16 @@
 				F931300A1B561EEE0080C72A /* Extends.swift */,
 			);
 			path = GuillotineMenu;
+			sourceTree = "<group>";
+		};
+		F9B60C791B6B699100202C7B /* MTA */ = {
+			isa = PBXGroup;
+			children = (
+				F9B60C7A1B6B69BA00202C7B /* libmtasdk.a */,
+				F9B60C7B1B6B69BA00202C7B /* MTA.h */,
+				F9B60C7C1B6B69BA00202C7B /* MTAConfig.h */,
+			);
+			name = MTA;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,7 +624,18 @@
 				);
 				INFOPLIST_FILE = baoBaoErGe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/andyhu/Downloads/MTA,
+					iOS,
+					"SDK/mta/mta-sdk-1.4.4/demo/sdk",
+					/Users/andyhu/Downloads/MTA,
+					iOS,
+					SDK,
+					"2/mta/mta-sdk-1.4.4/demo/sdk",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "baoBaoErGe-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -596,7 +651,18 @@
 				);
 				INFOPLIST_FILE = baoBaoErGe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/andyhu/Downloads/MTA,
+					iOS,
+					"SDK/mta/mta-sdk-1.4.4/demo/sdk",
+					/Users/andyhu/Downloads/MTA,
+					iOS,
+					SDK,
+					"2/mta/mta-sdk-1.4.4/demo/sdk",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "baoBaoErGe-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

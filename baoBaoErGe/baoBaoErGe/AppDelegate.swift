@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.window?.rootViewController?.view .addSubview(addStatusBar)
 //        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         UIApplication.sharedApplication().statusBarHidden=true; // for status bar hide
+        MTA.startWithAppkey("IZMF54KUV57A")
+        println(MTAConfig.getInstance().debugEnable)
         return true
     }
     
