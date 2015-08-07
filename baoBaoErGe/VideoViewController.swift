@@ -42,6 +42,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
 ////        video.save()
 //        var videos = VideoEntity.all() as![VideoEntity]
 //        println(videos)
+        
         let navBar = self.navigationController!.navigationBar
         
 
@@ -73,7 +74,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         //tableView.addSubview(menu)
 //        self.view.setY(y: 80)
-        self.title = "1-2岁"
+        self.title = "儿歌"
         // Do any additional setup after loading the view.
     }
     
