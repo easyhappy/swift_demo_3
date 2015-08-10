@@ -37,6 +37,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     var filteredErGes: [NSArray] = []
 
     var searchController: UISearchController!
+    var isSearch = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +115,9 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tabBarController?.tabBar.hidden = false
         
         let reachability = Reachability.reachabilityForInternetConnection()
+        // if isSearch {
+        //     searchController.active = true
+        // }
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
         var message = ""
     }
@@ -145,8 +149,10 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.active{
+            isSearch = true
             return filteredErGes.count
         }else{
+            isSearch = false
             return erGes.count
         }
     }
@@ -216,7 +222,6 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     func updateViewControllerFromChild(){
         searchController.active = false
-        definesPresentationContext = false
     }
     
     @IBAction func didPickColorUnwind(segue: UIStoryboardSegue) {
