@@ -73,6 +73,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     var swiped = false
     var EndTouch = true
     var TimerCount = 0
+    var parentController: VideoViewController!
     
     let colors: [(CGFloat, CGFloat, CGFloat)] = [
         (0, 0, 0),
@@ -198,8 +199,12 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
 
         self.view.addSubview(mainImageView)
         self.view.addSubview(tempImageView)
+        updateParentViewController()
     }
     
+    func updateParentViewController(){
+        parentController.updateViewControllerFromChild()
+    }
 
     func doYourStuff(){
         // self.view.autoresizingMask = (UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight)
@@ -239,7 +244,6 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
         video_path = NSHomeDirectory() + "/Documents/" + video_name
         var checkValidation = NSFileManager.defaultManager()
 
-        
         if (checkValidation.fileExistsAtPath(video_path)){
             gad_view.showGAD(self)
             self.view.addSubview(gad_view)   
@@ -296,23 +300,12 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         if touch.view .isKindOfClass(GADViewController){
-            println("xiaobei")
         }
         let touchPoint = touch.locationInView(self.gad_view)
         if touchPoint.y < self.gad_view.frame.height{
             return false
         }
         return true
-        //        if CGRectContainsPoint(self.gameboard.bounds, touchPoint){
-        //            let centerX = CGRectGetMidX(self.gameboard.bounds)
-        //            let centerY = CGRectGetMidY(self.gameboard.bounds)
-        //            let xy2 = pow(centerX - touchPoint.x, 2.0) + pow(centerY - touchPoint.y, 2.0)
-        //            let radius2 = pow(CGRectGetWidth(self.gameboard.frame)/2,2)
-        //            if xy2 < radius2{
-        //                return true
-        //            }
-        //        }
-        //        return false
     }
 
     override func shouldAutorotate() -> Bool {

@@ -83,43 +83,14 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             make.center.equalTo(self.view)
             make.height.equalTo(self.view.frame.height-40)
         }
-        //searchController.view.frame = CGRect(x: 0, y: 40, width: 100, height: 200)
-        // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
-        //     let dir = dirs[0] //documents directory
-        //     let path = dir.stringByAppendingPathComponent(file);
-        //     let text2 = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)
-        //     println(text2)
-        // }
 
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         gad_view = GADViewController(rootView: self)
-//        var addStatusBar = UIView()
-//        addStatusBar.frame = CGRectMake(0, 0, 320, 20);
-//        addStatusBar.backgroundColor = FlatUIColors.greenSeaColor()
-//        self.view.addSubview(addStatusBar)
 
-        //tableView.addSubview(menu)
-//        self.view.setY(y: 80)
         self.title = "儿歌"
         // Do any additional setup after loading the view.
     }
-    
-//    func reachabilityChanged(note: NSNotification) {
-//        
-//        let reachability = note.object as! Reachability
-//        
-//        if reachability.isReachable() {
-//            if reachability.isReachableViaWiFi() {
-//                println("Reachable via WiFi")
-//            } else {
-//                println("Reachable via Cellular")
-//            }
-//        } else {
-//            println("Not reachable")
-//        }
-//    }
-    
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchText = searchController.searchBar.text
@@ -219,6 +190,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         menuButton1?.frame = CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0)
         menuButton1?.hidden = true
         MTA.trackPageViewBegin("videosList")
+        definesPresentationContext = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -235,8 +207,16 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationVC.er_ges = self.erGes
             destinationVC.currentIndexRow = didSelectedRow
             destinationVC.gad_view = gad_view
-             self.tabBarController?.tabBar.hidden = true
+            self.tabBarController?.tabBar.hidden = true
+            //searchController.active = false
+            
+            destinationVC.parentController = self
         }
+    }
+
+    func updateViewControllerFromChild(){
+        searchController.active = false
+        definesPresentationContext = false
     }
     
     @IBAction func didPickColorUnwind(segue: UIStoryboardSegue) {
