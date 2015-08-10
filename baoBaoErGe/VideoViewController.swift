@@ -68,6 +68,21 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         
+        self.searchController.searchBar.showsCancelButton = true
+        var cancelButton: UIButton
+        var topView: UIView = self.searchController.searchBar.subviews[0] as! UIView
+        for subView in topView.subviews {
+            if subView.isKindOfClass(NSClassFromString("UINavigationButton")) {
+                cancelButton = subView as! UIButton
+                cancelButton.setTitle("取消", forState: UIControlState.Normal)
+            }
+        }
+        
+        tableView.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(self.view.frame.width)
+            make.center.equalTo(self.view)
+        }
+        //searchController.view.frame = CGRect(x: 0, y: 40, width: 100, height: 200)
         // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
         //     let dir = dirs[0] //documents directory
         //     let path = dir.stringByAppendingPathComponent(file);
@@ -89,25 +104,35 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
-    func reachabilityChanged(note: NSNotification) {
-        
-        let reachability = note.object as! Reachability
-        
-        if reachability.isReachable() {
-            if reachability.isReachableViaWiFi() {
-                println("Reachable via WiFi")
-            } else {
-                println("Reachable via Cellular")
-            }
-        } else {
-            println("Not reachable")
-        }
-    }
+//    func reachabilityChanged(note: NSNotification) {
+//        
+//        let reachability = note.object as! Reachability
+//        
+//        if reachability.isReachable() {
+//            if reachability.isReachableViaWiFi() {
+//                println("Reachable via WiFi")
+//            } else {
+//                println("Reachable via Cellular")
+//            }
+//        } else {
+//            println("Not reachable")
+//        }
+//    }
     
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filteredErGes = [erGes[0]]
+        let searchText = searchController.searchBar.text
+        filterContentForSearchText(searchText)
         tableView.reloadData()
+    }
+
+
+    func filterContentForSearchText(searchText: String) {
+         filteredErGes = erGes.filter({ ( er_ge) -> Bool in
+            let nameMatch = (er_ge[0] as! String).rangeOfString(searchText, options:
+            NSStringCompareOptions.CaseInsensitiveSearch)
+            return nameMatch != nil
+        })
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -117,11 +142,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tabBarController?.tabBar.hidden = false
         
         let reachability = Reachability.reachabilityForInternetConnection()
-        
         //NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: reachability)
-        
-
-
         var message = ""
     }
 
