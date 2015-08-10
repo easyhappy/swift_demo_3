@@ -19,7 +19,7 @@ import ReachabilitySwift
 var CurrentTitle = "是的"
 
 
-class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
 
     @IBOutlet weak var menuButton1: UIButton!
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -34,6 +34,9 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     var gad_view: GADViewController!
     var didSelectedRow = 0
     var erGes: [NSArray] = []
+    var filteredErGes: [NSArray] = []
+
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,14 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
                 erGes.append(splits)
             }
         }
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
         // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
         //     let dir = dirs[0] //documents directory
         //     let path = dir.stringByAppendingPathComponent(file);
@@ -92,6 +103,12 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             println("Not reachable")
         }
     }
+    
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filteredErGes = [erGes[0]]
+        tableView.reloadData()
+    }
 
     override func viewWillAppear(animated: Bool) {
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
@@ -106,25 +123,6 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
 
 
         var message = ""
-        reachability.startNotifier()
-        if reachability.isReachable() {
-            if reachability.isReachableViaWiFi() {
-                message = "Reachable via WiFi"
-                println("Reachable via WiFi")
-            } else {
-                message = "Reachable via Cellular"
-                println("Reachable via Cellular")
-            }
-        } else {
-            message = "not reachable"
-            println("Not reachable")
-        }
-        
-        
-
-//        var alertViewController = UIAlertController(title: "test", message: message, preferredStyle: .Alert)
-//        alertViewController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-//        self.presentViewController(alertViewController, animated: true, completion: nil)
     }
 
     
@@ -153,7 +151,11 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return erGes.count
+        if searchController.active{
+            return filteredErGes.count
+        }else{
+            return erGes.count
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -162,7 +164,14 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("videoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
-        var er_ge = erGes[indexPath.row]
+        var er_ge = []
+       
+        if searchController.active {
+            er_ge = filteredErGes[indexPath.row]
+        }
+        else{
+            er_ge = erGes[indexPath.row]
+        }        
         cell.nameLabel.text = er_ge[0] as? String
         
         cell.playCountLabel.text = "播放:" + (er_ge[4] as? String)! + "次"

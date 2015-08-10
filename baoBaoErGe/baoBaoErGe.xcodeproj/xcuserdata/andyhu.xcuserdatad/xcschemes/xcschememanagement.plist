@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>tableViewTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
+		<key>tableViewTest0.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,26 @@
 			<true/>
 		</dict>
 		<key>F9176C3A1B427ABB00B4CE1C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9BCA33A1B784A8F0053C730</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9BCA3511B784A8F0053C730</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9BCA3631B784AAB0053C730</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9BCA37A1B784AAB0053C730</key>
 		<dict>
 			<key>primary</key>
 			<true/>
