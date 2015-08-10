@@ -81,6 +81,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.snp_makeConstraints { (make) -> Void in
             make.width.equalTo(self.view.frame.width)
             make.center.equalTo(self.view)
+            make.height.equalTo(self.view.frame.height-40)
         }
         //searchController.view.frame = CGRect(x: 0, y: 40, width: 100, height: 200)
         // if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
@@ -229,7 +230,8 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationVC.setMenuButtonWithImage(menuButton1.imageView!.image!)
         }else{
             let destinationVC = segue.destinationViewController as! VideoPlayerViewController
-            destinationVC.er_ge = erGes[didSelectedRow] as! [String]
+
+            destinationVC.er_ge = (searchController.active ? filteredErGes[didSelectedRow] : erGes[didSelectedRow])as! [String]
             destinationVC.er_ges = self.erGes
             destinationVC.currentIndexRow = didSelectedRow
             destinationVC.gad_view = gad_view
