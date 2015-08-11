@@ -19,6 +19,9 @@
 		F91F53251B6F0E09002076E9 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F53241B6F0E09002076E9 /* MoreTableViewCell.swift */; };
 		F91F53291B6F424D002076E9 /* start2.png in Resources */ = {isa = PBXBuildFile; fileRef = F91F53281B6F424D002076E9 /* start2.png */; };
 		F921FB5F1B79DC6C00C775BA /* SphereMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921FB5E1B79DC6C00C775BA /* SphereMenu.swift */; };
+		F921FB611B79ECF200C775BA /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = F921FB601B79ECF200C775BA /* setting.png */; };
+		F921FB631B79ED2600C775BA /* iphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = F921FB621B79ED2600C775BA /* iphoto.png */; };
+		F921FB651B79ED5E00C775BA /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = F921FB641B79ED5E00C775BA /* empty.png */; };
 		F92C562E1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F92C562C1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld */; };
 		F92C56301B5E205600AAD5A6 /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */; };
 		F93122F91B6B21A80058525A /* er_ge.csv in Resources */ = {isa = PBXBuildFile; fileRef = F93122F81B6B21A80058525A /* er_ge.csv */; };
@@ -120,6 +123,9 @@
 		F91F53241B6F0E09002076E9 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		F91F53281B6F424D002076E9 /* start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start2.png; sourceTree = "<group>"; };
 		F921FB5E1B79DC6C00C775BA /* SphereMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereMenu.swift; sourceTree = "<group>"; };
+		F921FB601B79ECF200C775BA /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		F921FB621B79ED2600C775BA /* iphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphoto.png; sourceTree = "<group>"; };
+		F921FB641B79ED5E00C775BA /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		F92C562D1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = baoBaoErGe.xcdatamodel; sourceTree = "<group>"; };
 		F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
 		F93122F81B6B21A80058525A /* er_ge.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = er_ge.csv; sourceTree = "<group>"; };
@@ -329,6 +335,9 @@
 		F9176C261B427ABB00B4CE1C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F921FB621B79ED2600C775BA /* iphoto.png */,
+				F921FB601B79ECF200C775BA /* setting.png */,
+				F921FB641B79ED5E00C775BA /* empty.png */,
 				F97BAD491B687F7800785ACC /* clouds.png */,
 				F9F5B86D1B68D62F00E0C061 /* 1.png */,
 				F9F5B86E1B68D62F00E0C061 /* 2.png */,
@@ -646,6 +655,7 @@
 				F9176C311B427ABB00B4CE1C /* Main.storyboard in Resources */,
 				F9176C361B427ABB00B4CE1C /* LaunchScreen.xib in Resources */,
 				F9F5B8711B68D62F00E0C061 /* 1.png in Resources */,
+				F921FB651B79ED5E00C775BA /* empty.png in Resources */,
 				F94A14471B44EFE700B301D9 /* mine.storyboard in Resources */,
 				F9F5B86C1B68D0DD00E0C061 /* 5.png in Resources */,
 				F9F5B8741B68D62F00E0C061 /* 4.png in Resources */,
@@ -654,6 +664,7 @@
 				F9ABD4FA1B78932D00EDA4C5 /* tuya.storyboard in Resources */,
 				F9312FFC1B5391050080C72A /* ic_profile@3x.png in Resources */,
 				F9F5B8731B68D62F00E0C061 /* 3.png in Resources */,
+				F921FB611B79ECF200C775BA /* setting.png in Resources */,
 				F9312FFD1B5391050080C72A /* ic_settings@3x.png in Resources */,
 				F97BAD4A1B687F7800785ACC /* clouds.png in Resources */,
 				F9312FF91B5391050080C72A /* ic_feed@3x.png in Resources */,
@@ -664,6 +675,7 @@
 				F90790D11B66467000186447 /* No-Zoom-effect.jpg in Resources */,
 				F94A14491B44F28700B301D9 /* star-7.png in Resources */,
 				F9ABD4FC1B78958200EDA4C5 /* pencil-7.png in Resources */,
+				F921FB631B79ED2600C775BA /* iphoto.png in Resources */,
 				F94821C81B709D4300BF617B /* image.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

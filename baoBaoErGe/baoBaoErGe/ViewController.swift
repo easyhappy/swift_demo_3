@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FlatUIColors
 
 class ViewController: UIViewController, SphereMenuDelegate {
     
@@ -38,14 +39,14 @@ class ViewController: UIViewController, SphereMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let start = UIImage(named: "start")
-        let image1 = UIImage(named: "start")
-        let image3 = UIImage(named: "start")
-        let image2 = UIImage(named: "start")
-        var images:[UIImage] = [image1!, image2!, image3!]
-        var menu = SphereMenu(startPoint: CGPointMake(160, 320), startImage: start!, submenuImages:images, tapToDismiss:true)
+        let image1 = UIImage(named: "setting")
+        let image3 = UIImage(named: "iphoto")
+        let image2 = UIImage(named: "empty")
+        var images:[UIImage] = [image1!, image2!, image3!, image2!, image2!]
+        var menu = SphereMenu(startPoint: CGPointMake(self.view.frame.width/2, self.view.frame.height-55), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
         self.view.addSubview(menu)
-        // Do any additional setup after loading the view, typically from a nib.
+        self.tabBarController?.tabBar.hidden = true
     }
     
     func sphereDidSelected(index: Int) {

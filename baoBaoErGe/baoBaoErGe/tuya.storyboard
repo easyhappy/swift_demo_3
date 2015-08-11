@@ -28,13 +28,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-eu-7Wm">
-                                <rect key="frame" x="28" y="500" width="28" height="100"/>
-                                <state key="normal" image="Grey">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAF-ud-bfM">
+                                <rect key="frame" x="0.0" y="500" width="28" height="100"/>
+                                <state key="normal" image="Black">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="280" y="99" width="120" height="34"/>
+                                </variation>
                                 <connections>
-                                    <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="aGz-Fq-6Z4"/>
+                                    <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="2uU-ug-6gu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZQ-y9-rMR">
@@ -42,6 +45,9 @@
                                 <state key="normal" image="Red">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="275" y="445" width="125" height="41"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="ROm-wp-t0Q"/>
                                 </connections>
@@ -51,6 +57,9 @@
                                 <state key="normal" image="Blue">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="270" y="412" width="130" height="33"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="1rR-FU-YdG"/>
                                 </connections>
@@ -61,7 +70,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="372" y="306" width="28" height="100"/>
+                                    <rect key="frame" x="280" y="178" width="120" height="33"/>
                                 </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="GSw-C1-x4E"/>
@@ -72,6 +81,9 @@
                                 <state key="normal" image="DarkGreen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="273" y="378" width="125" height="34"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="N2E-Ol-o4g"/>
                                 </connections>
@@ -81,6 +93,9 @@
                                 <state key="normal" image="LightGreen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="273" y="338" width="125" height="32"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="WgX-EL-nd8"/>
                                 </connections>
@@ -90,6 +105,9 @@
                                 <state key="normal" image="Brown">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="270" y="299" width="125" height="31"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="44c-4N-LqP"/>
                                 </connections>
@@ -99,6 +117,9 @@
                                 <state key="normal" image="DarkOrange">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="270" y="263" width="125" height="33"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="VPK-im-4yS"/>
                                 </connections>
@@ -108,6 +129,9 @@
                                 <state key="normal" image="Yellow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="275" y="219" width="120" height="36"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="vP0-im-orD"/>
                                 </connections>
@@ -117,6 +141,9 @@
                                 <state key="normal" image="Eraser">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="280" y="141" width="125" height="29"/>
+                                </variation>
                                 <connections>
                                     <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="RXQ-Of-DwT"/>
                                 </connections>
@@ -157,16 +184,16 @@
                                     <action selector="share:" destination="kUK-Cp-roB" eventType="touchUpInside" id="7Ow-Wz-vh0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAF-ud-bfM">
-                                <rect key="frame" x="0.0" y="500" width="28" height="100"/>
-                                <state key="normal" image="Black">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vea-eu-7Wm">
+                                <rect key="frame" x="28" y="500" width="28" height="100"/>
+                                <state key="normal" image="Grey">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="280" y="99" width="120" height="34"/>
+                                    <rect key="frame" x="275" y="484" width="125" height="49"/>
                                 </variation>
                                 <connections>
-                                    <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="2uU-ug-6gu"/>
+                                    <action selector="pencilPressed:" destination="kUK-Cp-roB" eventType="touchUpInside" id="aGz-Fq-6Z4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -382,15 +409,15 @@
     </scenes>
     <resources>
         <image name="Black" width="332" height="53"/>
-        <image name="Blue" width="53" height="332"/>
-        <image name="Brown" width="53" height="332"/>
-        <image name="DarkGreen" width="53" height="332"/>
-        <image name="DarkOrange" width="53" height="332"/>
-        <image name="Eraser" width="55" height="167"/>
-        <image name="Grey" width="53" height="332"/>
-        <image name="LightBlue" width="53" height="332"/>
-        <image name="LightGreen" width="53" height="332"/>
-        <image name="Red" width="53" height="332"/>
-        <image name="Yellow" width="53" height="332"/>
+        <image name="Blue" width="332" height="53"/>
+        <image name="Brown" width="332" height="53"/>
+        <image name="DarkGreen" width="332" height="53"/>
+        <image name="DarkOrange" width="332" height="53"/>
+        <image name="Eraser" width="167" height="55"/>
+        <image name="Grey" width="332" height="53"/>
+        <image name="LightBlue" width="332" height="53"/>
+        <image name="LightGreen" width="332" height="53"/>
+        <image name="Red" width="332" height="53"/>
+        <image name="Yellow" width="332" height="53"/>
     </resources>
 </document>
