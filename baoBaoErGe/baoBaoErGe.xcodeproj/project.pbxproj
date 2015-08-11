@@ -46,6 +46,7 @@
 		F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */; };
 		F9ABD4FA1B78932D00EDA4C5 /* tuya.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9ABD4F91B78932D00EDA4C5 /* tuya.storyboard */; };
 		F9ABD4FC1B78958200EDA4C5 /* pencil-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F9ABD4FB1B78958200EDA4C5 /* pencil-7.png */; };
+		F9AFB00D1B79A4CC0049B79D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AFB00C1B79A4CC0049B79D /* SettingViewController.swift */; };
 		F9B60C6D1B6B68A000202C7B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C6C1B6B68A000202C7B /* libz.dylib */; };
 		F9B60C6F1B6B68AA00202C7B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C6E1B6B68AA00202C7B /* libsqlite3.dylib */; };
 		F9B60C711B6B68B400202C7B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C701B6B68B400202C7B /* SystemConfiguration.framework */; };
@@ -147,6 +148,7 @@
 		F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		F9ABD4F91B78932D00EDA4C5 /* tuya.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tuya.storyboard; sourceTree = "<group>"; };
 		F9ABD4FB1B78958200EDA4C5 /* pencil-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil-7.png"; sourceTree = "<group>"; };
+		F9AFB00C1B79A4CC0049B79D /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F9B60C6C1B6B68A000202C7B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F9B60C6E1B6B68AA00202C7B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F9B60C701B6B68B400202C7B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -300,6 +302,7 @@
 				F94A144C1B450F9700B301D9 /* VideoViewController.swift */,
 				F93130021B55FCF50080C72A /* VideoTableViewCell.swift */,
 				F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */,
+				F9AFB00C1B79A4CC0049B79D /* SettingViewController.swift */,
 				F9176C281B427ABB00B4CE1C /* AppDelegate.swift */,
 				F9176C2D1B427ABB00B4CE1C /* ViewController.swift */,
 				F997B7631B4DEA770090ED74 /* video.storyboard */,
@@ -763,6 +766,7 @@
 				F94A144D1B450F9700B301D9 /* VideoViewController.swift in Sources */,
 				F91F531F1B6F0515002076E9 /* MineViewController.swift in Sources */,
 				F91F53231B6F0CA6002076E9 /* MoreTableViewController.swift in Sources */,
+				F9AFB00D1B79A4CC0049B79D /* SettingViewController.swift in Sources */,
 				F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */,
 				F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */,
 				F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */,
