@@ -21,6 +21,7 @@ class ViewController: UIViewController, SphereMenuDelegate {
     var brushWidth: CGFloat = 10.0
     var opacity: CGFloat = 1.0
     var swiped = false
+    var currentIndex = 0
     
     let colors: [(CGFloat, CGFloat, CGFloat)] = [
         (0, 0, 0),
@@ -53,7 +54,9 @@ class ViewController: UIViewController, SphereMenuDelegate {
     }
     
     func sphereDidSelected(index: Int) {
-        println("\(index)")
+        if index == 0 {
+            self.performSegueWithIdentifier("quseSegue", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,6 +100,10 @@ class ViewController: UIViewController, SphereMenuDelegate {
         if let touch = touches.first as? UITouch {
             lastPoint = touch.locationInView(self.view)
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tabBarController?.tabBar.hidden = true
     }
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
@@ -156,13 +163,15 @@ class ViewController: UIViewController, SphereMenuDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let settingsViewController = segue.destinationViewController as! SettingsViewController
-        settingsViewController.delegate = self
-        settingsViewController.brush = brushWidth
-        settingsViewController.opacity = opacity
-        settingsViewController.red = red
-        settingsViewController.green = green
-        settingsViewController.blue = blue
+        if(currentIndex == 3){       
+            let settingsViewController = segue.destinationViewController as! SettingsViewController
+            settingsViewController.delegate = self
+            settingsViewController.brush = brushWidth
+            settingsViewController.opacity = opacity
+            settingsViewController.red = red
+            settingsViewController.green = green
+            settingsViewController.blue = blue
+        }
     }
     
 }
