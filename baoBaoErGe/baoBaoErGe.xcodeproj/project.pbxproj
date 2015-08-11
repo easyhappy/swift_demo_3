@@ -44,6 +44,8 @@
 		F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */; };
 		F997B7641B4DEA770090ED74 /* video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F997B7631B4DEA770090ED74 /* video.storyboard */; };
 		F99FD7AB1B5C987700BA87DF /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */; };
+		F9ABD4FA1B78932D00EDA4C5 /* tuya.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9ABD4F91B78932D00EDA4C5 /* tuya.storyboard */; };
+		F9ABD4FC1B78958200EDA4C5 /* pencil-7.png in Resources */ = {isa = PBXBuildFile; fileRef = F9ABD4FB1B78958200EDA4C5 /* pencil-7.png */; };
 		F9B60C6D1B6B68A000202C7B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C6C1B6B68A000202C7B /* libz.dylib */; };
 		F9B60C6F1B6B68AA00202C7B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C6E1B6B68AA00202C7B /* libsqlite3.dylib */; };
 		F9B60C711B6B68B400202C7B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B60C701B6B68B400202C7B /* SystemConfiguration.framework */; };
@@ -143,6 +145,8 @@
 		F997B75E1B4B82DC0090ED74 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F997B7631B4DEA770090ED74 /* video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = video.storyboard; sourceTree = "<group>"; };
 		F99FD7AA1B5C987700BA87DF /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
+		F9ABD4F91B78932D00EDA4C5 /* tuya.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = tuya.storyboard; sourceTree = "<group>"; };
+		F9ABD4FB1B78958200EDA4C5 /* pencil-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil-7.png"; sourceTree = "<group>"; };
 		F9B60C6C1B6B68A000202C7B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F9B60C6E1B6B68AA00202C7B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F9B60C701B6B68B400202C7B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -311,6 +315,7 @@
 				F9176C341B427ABB00B4CE1C /* LaunchScreen.xib */,
 				F9176C261B427ABB00B4CE1C /* Supporting Files */,
 				F91F53241B6F0E09002076E9 /* MoreTableViewCell.swift */,
+				F9ABD4F91B78932D00EDA4C5 /* tuya.storyboard */,
 			);
 			path = baoBaoErGe;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				F97BAD491B687F7800785ACC /* clouds.png */,
 				F9F5B86D1B68D62F00E0C061 /* 1.png */,
 				F9F5B86E1B68D62F00E0C061 /* 2.png */,
+				F9ABD4FB1B78958200EDA4C5 /* pencil-7.png */,
 				F9F5B86F1B68D62F00E0C061 /* 3.png */,
 				F93122F81B6B21A80058525A /* er_ge.csv */,
 				F9F5B8701B68D62F00E0C061 /* 4.png */,
@@ -639,6 +645,7 @@
 				F9F5B8741B68D62F00E0C061 /* 4.png in Resources */,
 				F94B60FD1B70A221003A4BC2 /* ReleaseNotes.txt in Resources */,
 				F997B7641B4DEA770090ED74 /* video.storyboard in Resources */,
+				F9ABD4FA1B78932D00EDA4C5 /* tuya.storyboard in Resources */,
 				F9312FFC1B5391050080C72A /* ic_profile@3x.png in Resources */,
 				F9F5B8731B68D62F00E0C061 /* 3.png in Resources */,
 				F9312FFD1B5391050080C72A /* ic_settings@3x.png in Resources */,
@@ -650,6 +657,7 @@
 				F91F53291B6F424D002076E9 /* start2.png in Resources */,
 				F90790D11B66467000186447 /* No-Zoom-effect.jpg in Resources */,
 				F94A14491B44F28700B301D9 /* star-7.png in Resources */,
+				F9ABD4FC1B78958200EDA4C5 /* pencil-7.png in Resources */,
 				F94821C81B709D4300BF617B /* image.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1245,6 +1253,7 @@
 				F9BCA35B1B784A8F0053C730 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9BCA35F1B784A8F0053C730 /* Build configuration list for PBXNativeTarget "tableViewTestTests" */ = {
 			isa = XCConfigurationList;
@@ -1253,6 +1262,7 @@
 				F9BCA35D1B784A8F0053C730 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9BCA3831B784AAB0053C730 /* Build configuration list for PBXNativeTarget "tableViewTest0" */ = {
 			isa = XCConfigurationList;
@@ -1261,6 +1271,7 @@
 				F9BCA3851B784AAB0053C730 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9BCA3861B784AAB0053C730 /* Build configuration list for PBXNativeTarget "tableViewTest0Tests" */ = {
 			isa = XCConfigurationList;
@@ -1269,6 +1280,7 @@
 				F9BCA3881B784AAB0053C730 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

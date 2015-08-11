@@ -45,6 +45,14 @@ public class MyStyle : Style {
     }
 }
 
+extension NSFileManager{
+    func addSkipBackupAttributeToItemAtURL(url:NSURL)->Bool{
+        var error:NSError?
+        let success:Bool = url.setResourceValue(true, forKey: NSURLIsExcludedFromBackupKey, error: &error);
+        return success;
+    }
+}
+
 class VideoPlayerViewController: UIViewController, PlayerDelegate{
     private var player: Player!
     private var halfCircularProgress: KYCircularProgress!
@@ -261,7 +269,7 @@ class VideoPlayerViewController: UIViewController, PlayerDelegate{
                 if (error == nil){
                     println(NSSearchPathDirectory.DocumentationDirectory)
                     self.fourColorCircularProgress?.progress = Double(1.0)
-
+                    NSFileManager.defaultManager().addSkipBackupAttributeToItemAtURL(NSURL.fileURLWithPath(self.video_path)!);
                     UIView.animateWithDuration(0.1, animations: {
                         self.fourColorCircularProgress?.removeFromSuperview()
                         self.player?.path = self.video_path

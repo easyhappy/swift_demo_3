@@ -25,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaC-dW-Fig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="451"/>
+            <point key="canvasLocation" x="891" y="592"/>
         </scene>
         <!--我的-->
         <scene sceneID="3P8-u3-dcm">
@@ -48,7 +48,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXR-IQ-hDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="1156"/>
+            <point key="canvasLocation" x="833" y="1355"/>
+        </scene>
+        <!--涂鸦-->
+        <scene sceneID="Jg2-I2-nfB">
+            <objects>
+                <viewController id="9nC-FF-z4v" customClass="RBStoryboardLink" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5cr-WU-dFI"/>
+                        <viewControllerLayoutGuide type="bottom" id="UR7-oD-fdq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2TI-DY-eCa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="涂鸦" image="pencil-7.png" id="A6E-nb-Gpf"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="storyboardName" value="tuya"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="needsTopLayoutGuide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ugC-M8-I3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="1355"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0BU-0i-dAs">
@@ -62,15 +85,17 @@
                     </tabBar>
                     <connections>
                         <segue destination="e6I-iU-8VM" kind="relationship" relationship="viewControllers" id="L3T-sZ-gJ4"/>
-                        <segue destination="QLc-7s-i1P" kind="relationship" relationship="viewControllers" id="xXN-ey-eKh"/>
+                        <segue destination="9nC-FF-z4v" kind="relationship" relationship="viewControllers" id="WqW-8q-zqY"/>
+                        <segue destination="QLc-7s-i1P" kind="relationship" relationship="viewControllers" id="V4r-vp-Zp4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6C-XU-d0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640" y="451"/>
+            <point key="canvasLocation" x="402" y="592"/>
         </scene>
     </scenes>
     <resources>
+        <image name="pencil-7.png" width="30" height="30"/>
         <image name="star-7.png" width="30" height="30"/>
         <image name="video-camera-7.png" width="30" height="30"/>
     </resources>
