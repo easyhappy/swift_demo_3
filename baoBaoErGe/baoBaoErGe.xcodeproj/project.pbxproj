@@ -18,6 +18,7 @@
 		F91F53231B6F0CA6002076E9 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F53221B6F0CA6002076E9 /* MoreTableViewController.swift */; };
 		F91F53251B6F0E09002076E9 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91F53241B6F0E09002076E9 /* MoreTableViewCell.swift */; };
 		F91F53291B6F424D002076E9 /* start2.png in Resources */ = {isa = PBXBuildFile; fileRef = F91F53281B6F424D002076E9 /* start2.png */; };
+		F921FB5F1B79DC6C00C775BA /* SphereMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921FB5E1B79DC6C00C775BA /* SphereMenu.swift */; };
 		F92C562E1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F92C562C1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodeld */; };
 		F92C56301B5E205600AAD5A6 /* VideoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */; };
 		F93122F91B6B21A80058525A /* er_ge.csv in Resources */ = {isa = PBXBuildFile; fileRef = F93122F81B6B21A80058525A /* er_ge.csv */; };
@@ -118,6 +119,7 @@
 		F91F53221B6F0CA6002076E9 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		F91F53241B6F0E09002076E9 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		F91F53281B6F424D002076E9 /* start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start2.png; sourceTree = "<group>"; };
+		F921FB5E1B79DC6C00C775BA /* SphereMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereMenu.swift; sourceTree = "<group>"; };
 		F92C562D1B5E1FB100AAD5A6 /* baoBaoErGe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = baoBaoErGe.xcdatamodel; sourceTree = "<group>"; };
 		F92C562F1B5E205600AAD5A6 /* VideoEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEntity.swift; sourceTree = "<group>"; };
 		F93122F81B6B21A80058525A /* er_ge.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = er_ge.csv; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				F9176C261B427ABB00B4CE1C /* Supporting Files */,
 				F91F53241B6F0E09002076E9 /* MoreTableViewCell.swift */,
 				F9ABD4F91B78932D00EDA4C5 /* tuya.storyboard */,
+				F921FB5E1B79DC6C00C775BA /* SphereMenu.swift */,
 			);
 			path = baoBaoErGe;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				F91F53231B6F0CA6002076E9 /* MoreTableViewController.swift in Sources */,
 				F9AFB00D1B79A4CC0049B79D /* SettingViewController.swift in Sources */,
 				F997B75F1B4B82DC0090ED74 /* GuillotineMenuSegue.swift in Sources */,
+				F921FB5F1B79DC6C00C775BA /* SphereMenu.swift in Sources */,
 				F997B7611B4B82DC0090ED74 /* GuillotineMenuViewController.swift in Sources */,
 				F997B7621B4B82DC0090ED74 /* UIViewExtension.swift in Sources */,
 				F91F53251B6F0E09002076E9 /* MoreTableViewCell.swift in Sources */,

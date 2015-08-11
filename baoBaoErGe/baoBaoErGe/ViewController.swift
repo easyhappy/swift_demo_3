@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SphereMenuDelegate {
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
@@ -37,9 +37,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let start = UIImage(named: "start")
+        let image1 = UIImage(named: "icon-email")
+        var images:[UIImage] = [image1!]
+        var menu = SphereMenu(startPoint: CGPointMake(160, 320), startImage: start!, submenuImages:images, tapToDismiss:true)
+        menu.delegate = self
+        self.view.addSubview(menu)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    func sphereDidSelected(index: Int) {
+        println("\(index)")
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
