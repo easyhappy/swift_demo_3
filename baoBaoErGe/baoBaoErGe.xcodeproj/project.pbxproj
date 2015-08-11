@@ -41,6 +41,7 @@
 		F94B60FE1B70A239003A4BC2 /* libmtasdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F94B60F81B70A221003A4BC2 /* libmtasdk.a */; };
 		F955ECA41B79FDF90015279C /* quse.png in Resources */ = {isa = PBXBuildFile; fileRef = F955ECA31B79FDF90015279C /* quse.png */; };
 		F955ECA61B79FE950015279C /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = F955ECA51B79FE950015279C /* weixin.png */; };
+		F955ECA81B79FFD40015279C /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F955ECA71B79FFD40015279C /* home_icon.png */; };
 		F97BAD4A1B687F7800785ACC /* clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = F97BAD491B687F7800785ACC /* clouds.png */; };
 		F97CDCF41B67795B00F8C150 /* GADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97CDCF31B67795B00F8C150 /* GADViewController.swift */; };
 		F97CDCF81B677A5100F8C150 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97CDCF71B677A5100F8C150 /* GoogleMobileAds.framework */; };
@@ -149,6 +150,7 @@
 		F94B60FB1B70A221003A4BC2 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
 		F955ECA31B79FDF90015279C /* quse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quse.png; sourceTree = "<group>"; };
 		F955ECA51B79FE950015279C /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
+		F955ECA71B79FFD40015279C /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		F97BAD491B687F7800785ACC /* clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clouds.png; sourceTree = "<group>"; };
 		F97CDCF31B67795B00F8C150 /* GADViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GADViewController.swift; sourceTree = "<group>"; };
 		F97CDCF71B677A5100F8C150 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		F9176C261B427ABB00B4CE1C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F955ECA71B79FFD40015279C /* home_icon.png */,
 				F955ECA51B79FE950015279C /* weixin.png */,
 				F921FB621B79ED2600C775BA /* iphoto.png */,
 				F921FB601B79ECF200C775BA /* setting.png */,
@@ -679,6 +682,7 @@
 				F9312FFB1B5391050080C72A /* ic_menuRotated@3x.png in Resources */,
 				F93122F91B6B21A80058525A /* er_ge.csv in Resources */,
 				F955ECA41B79FDF90015279C /* quse.png in Resources */,
+				F955ECA81B79FFD40015279C /* home_icon.png in Resources */,
 				F91F53291B6F424D002076E9 /* start2.png in Resources */,
 				F90790D11B66467000186447 /* No-Zoom-effect.jpg in Resources */,
 				F94A14491B44F28700B301D9 /* star-7.png in Resources */,

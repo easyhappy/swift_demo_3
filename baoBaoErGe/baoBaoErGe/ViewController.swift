@@ -44,8 +44,9 @@ class ViewController: UIViewController, SphereMenuDelegate {
         let image3 = UIImage(named: "setting")
         let image4 = UIImage(named: "empty")
         let image5 = UIImage(named: "weixin")
-        var images:[UIImage] = [image1!, image2!, image3!, image4!, image5!]
-        var menu = SphereMenu(startPoint: CGPointMake(self.view.frame.width/2, self.view.frame.height-55), startImage: start!, submenuImages:images, tapToDismiss:true)
+        let image6 = UIImage(named: "home_icon")
+        var images:[UIImage] = [image1!, image2!, image3!, image4!, image5!, image6!]
+        var menu = SphereMenu(startPoint: CGPointMake(self.view.frame.width/2, self.view.frame.height-80), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
         self.view.addSubview(menu)
         self.tabBarController?.tabBar.hidden = true

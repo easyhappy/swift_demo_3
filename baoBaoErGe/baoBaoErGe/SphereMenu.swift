@@ -18,7 +18,7 @@ class SphereMenu:UIView, UICollisionBehaviorDelegate{
     
     let kItemInitTag:Int = 1001
     let kAngleOffset:CGFloat = CGFloat(M_PI_2) / 2.0
-    let kSphereLength:CGFloat = 80
+    let kSphereLength:CGFloat = 60
     let kSphereDamping:Float = 0.3
     
     var delegate:SphereMenuDelegate?
