@@ -38,8 +38,10 @@ class ViewController: UIViewController, SphereMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let start = UIImage(named: "start")
-        let image1 = UIImage(named: "icon-email")
-        var images:[UIImage] = [image1!]
+        let image1 = UIImage(named: "start")
+        let image3 = UIImage(named: "start")
+        let image2 = UIImage(named: "start")
+        var images:[UIImage] = [image1!, image2!, image3!]
         var menu = SphereMenu(startPoint: CGPointMake(160, 320), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
         self.view.addSubview(menu)
