@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="4eS-aI-ZxD">
             <objects>
-                <viewController id="kUK-Cp-roB" customClass="ViewController" customModule="DrawPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kUK-Cp-roB" customClass="ViewController" customModule="baoBaoErGe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ESp-Xm-v0I"/>
                         <viewControllerLayoutGuide type="bottom" id="ePJ-nv-yT2"/>
@@ -22,15 +22,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L13-Sh-YJW" userLabel="TempImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-cg-Pvn">
-                                <rect key="frame" x="540" y="28" width="40" height="30"/>
-                                <state key="normal" title="Share">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="share:" destination="kUK-Cp-roB" eventType="touchUpInside" id="7Ow-Wz-vh0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAF-ud-bfM">
                                 <rect key="frame" x="0.0" y="500" width="28" height="100"/>
                                 <constraints>
@@ -194,7 +185,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lb4-nl-M3P">
                                 <rect key="frame" x="20" y="28" width="40" height="30"/>
-                                <state key="normal" title="Reset">
+                                <state key="normal" title="清空">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -203,11 +194,20 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRs-4u-bxl">
                                 <rect key="frame" x="272" y="28" width="57" height="30"/>
-                                <state key="normal" title="Settings">
+                                <state key="normal" title="设置">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="CiF-XM-Elf" kind="presentation" id="ePx-7N-2RV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrx-cg-Pvn">
+                                <rect key="frame" x="540" y="28" width="40" height="30"/>
+                                <state key="normal" title="分享">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="kUK-Cp-roB" eventType="touchUpInside" id="7Ow-Wz-vh0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -225,7 +225,9 @@
                             <constraint firstItem="lb4-nl-M3P" firstAttribute="leading" secondItem="5Mu-iT-zxC" secondAttribute="leading" constant="20" symbolic="YES" id="Ccx-S2-wcV"/>
                             <constraint firstItem="Mrx-cg-Pvn" firstAttribute="top" secondItem="ESp-Xm-v0I" secondAttribute="bottom" constant="8" symbolic="YES" id="Dz7-BA-nB2"/>
                             <constraint firstItem="oRs-4u-bxl" firstAttribute="top" secondItem="ESp-Xm-v0I" secondAttribute="bottom" constant="8" symbolic="YES" id="EmN-5d-hRY"/>
-                            <constraint firstAttribute="centerX" secondItem="oRs-4u-bxl" secondAttribute="centerX" id="FPR-NN-hYz"/>
+                            <constraint firstAttribute="centerX" secondItem="oRs-4u-bxl" secondAttribute="centerX" id="FPR-NN-hYz">
+                                <variation key="widthClass=compact" constant="-1"/>
+                            </constraint>
                             <constraint firstItem="L13-Sh-YJW" firstAttribute="top" secondItem="5Mu-iT-zxC" secondAttribute="top" id="Kmz-Un-Dq9"/>
                             <constraint firstItem="pvL-s9-3lF" firstAttribute="leading" secondItem="Ebe-Nr-l7M" secondAttribute="trailing" id="LQf-cA-Y5J"/>
                             <constraint firstItem="ePJ-nv-yT2" firstAttribute="top" secondItem="pvL-s9-3lF" secondAttribute="bottom" id="LeB-nM-yCH"/>
@@ -234,7 +236,9 @@
                             <constraint firstItem="Ebe-Nr-l7M" firstAttribute="leading" secondItem="uMo-cb-ORZ" secondAttribute="trailing" id="STa-Kt-44v"/>
                             <constraint firstItem="ePJ-nv-yT2" firstAttribute="top" secondItem="qI2-Xq-6V0" secondAttribute="bottom" id="T2x-u5-7Nj"/>
                             <constraint firstItem="Vea-eu-7Wm" firstAttribute="leading" secondItem="tAF-ud-bfM" secondAttribute="trailing" id="Tgv-bh-a9c"/>
-                            <constraint firstAttribute="trailing" secondItem="Mrx-cg-Pvn" secondAttribute="trailing" constant="20" symbolic="YES" id="ULp-ZW-Zl6"/>
+                            <constraint firstAttribute="trailing" secondItem="Mrx-cg-Pvn" secondAttribute="trailing" constant="20" symbolic="YES" id="ULp-ZW-Zl6">
+                                <variation key="widthClass=compact" constant="26"/>
+                            </constraint>
                             <constraint firstItem="ePJ-nv-yT2" firstAttribute="top" secondItem="L13-Sh-YJW" secondAttribute="bottom" id="Ukb-Ic-WRF"/>
                             <constraint firstItem="sjj-ar-djX" firstAttribute="leading" secondItem="8L0-BC-eU3" secondAttribute="trailing" id="XeT-3K-eyz"/>
                             <constraint firstItem="ePJ-nv-yT2" firstAttribute="top" secondItem="8L0-BC-eU3" secondAttribute="bottom" id="acR-aV-O7n"/>
@@ -263,7 +267,7 @@
         <!--Settings View Controller-->
         <scene sceneID="r2T-aB-eHi">
             <objects>
-                <viewController id="CiF-XM-Elf" customClass="SettingsViewController" customModule="DrawPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CiF-XM-Elf" customClass="SettingsViewController" customModule="baoBaoErGe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tz6-pM-ElG"/>
                         <viewControllerLayoutGuide type="bottom" id="GY1-yT-X9C"/>
@@ -475,12 +479,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Black" width="30" height="44"/>
+        <image name="Black" width="53" height="332"/>
         <image name="Blue" width="53" height="332"/>
         <image name="Brown" width="53" height="332"/>
         <image name="DarkGreen" width="53" height="332"/>
         <image name="DarkOrange" width="53" height="332"/>
-        <image name="Eraser" width="53" height="332"/>
+        <image name="Eraser" width="55" height="167"/>
         <image name="Grey" width="53" height="332"/>
         <image name="LightBlue" width="53" height="332"/>
         <image name="LightGreen" width="53" height="332"/>
