@@ -57,6 +57,27 @@ class ViewController: UIViewController, SphereMenuDelegate {
         self.view.addSubview(menu)
         self.tabBarController?.tabBar.hidden = true
         addPens()
+        // tempImageView.snp_makeConstraints { (make) -> Void in
+        //    make.width.equalTo(self.view.frame.size.width)
+        //    make.height.equalTo(self.view.frame.size.height)
+
+        //    make.top.equalTo(self.view).offset(0)
+        //    make.left.equalTo(self.view).offset(0)
+        //    make.bottom.equalTo(self.view).offset(0)
+        //    make.right.equalTo(self.view).offset(0)
+        // }
+
+        mainImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height-200)
+        tempImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height-200)
+//        mainImageView.snp_makeConstraints { (make) -> Void in
+//           make.width.equalTo(self.view.frame.size.width)
+//           make.height.equalTo(self.view.frame.size.height)
+//
+//           make.top.equalTo(self.view).offset(0)
+//           make.left.equalTo(self.view).offset(0)
+//           make.bottom.equalTo(self.view).offset(0)
+//           make.right.equalTo(self.view).offset(0)
+//        }
     }
 
     func addPens(){
@@ -283,25 +304,7 @@ class ViewController: UIViewController, SphereMenuDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = true
-        tempImageView.snp_makeConstraints { (make) -> Void in
-           make.width.equalTo(self.view.frame.size.width)
-           make.height.equalTo(self.view.frame.size.height)
 
-           make.top.equalTo(self.view).offset(0)
-           make.left.equalTo(self.view).offset(0)
-           make.bottom.equalTo(self.view).offset(0)
-           make.right.equalTo(self.view).offset(0)
-        }
-
-        mainImageView.snp_makeConstraints { (make) -> Void in
-           make.width.equalTo(self.view.frame.size.width)
-           make.height.equalTo(self.view.frame.size.height)
-
-           make.top.equalTo(self.view).offset(0)
-           make.left.equalTo(self.view).offset(0)
-           make.bottom.equalTo(self.view).offset(0)
-           make.right.equalTo(self.view).offset(0)
-        }
     }
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
