@@ -34,6 +34,7 @@ class ViewController: UIViewController, SphereMenuDelegate {
     var yellowPen: UIImageView!
     var eraserPen: UIImageView!
     var colorPens: [String: UIImageView]!
+    var currentPen: String = ""
     
 
     let colors: [(String, CGFloat, CGFloat, CGFloat)] = [("blackPen", 0, 0, 0), ("greyPen", 105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
@@ -74,6 +75,8 @@ class ViewController: UIViewController, SphereMenuDelegate {
 
         mainImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height)
         tempImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height)
+        currentPen = "blackPen"
+        initPenPosition()
 //        mainImageView.snp_makeConstraints { (make) -> Void in
 //           make.width.equalTo(self.view.frame.size.width)
 //           make.height.equalTo(self.view.frame.size.height)
@@ -248,12 +251,20 @@ class ViewController: UIViewController, SphereMenuDelegate {
 
     func pentapGesture(colorPen: String){
         //currentColor = color
-        var currentPen = ""
+        currentPen = colorPen
         for color in colors{
             (currentPen, red, green, blue) = color
             if currentPen == colorPen{
                 for (key, pen) in colorPens{
-                    pen.hidden = true
+                    if key == currentPen{
+                        pen.frame.origin.x = self.view.frame.width - CGFloat(80)
+                    }
+                    else {
+                        UIView.animateWithDuration(0.5, delay: 0.2, options: UIViewAnimationOptions.CurveLinear, animations: {
+                            pen.frame.origin.x = self.view.frame.width
+                            }, completion: { (finished: Bool) in
+                        });
+                    }
                 }
                 return
             }
@@ -261,13 +272,38 @@ class ViewController: UIViewController, SphereMenuDelegate {
         
     }
 
+    func initPenPosition(){
+        var localPen = ""
+        for color in colors{
+            (localPen, red, green, blue) = color
+            if currentPen == localPen{
+                for (key, pen) in colorPens{
+                    if key == currentPen{
+                        pen.frame.origin.x = self.view.frame.width - CGFloat(80)
+                    }
+                    else {
+                        UIView.animateWithDuration(0.5, delay: 0.2, options: UIViewAnimationOptions.CurveLinear, animations: {
+                            pen.frame.origin.x = self.view.frame.width
+                            }, completion: { (finished: Bool) in
+                        });
+                    }
+                }
+                return
+            }
+        }
+    }
+
     func sphereDidSelected(index: Int) {
         switch  index {
         case 0:
+            var width = self.view.frame.width
             for (key, pen) in colorPens{
-                pen.hidden = false
+                UIView.animateWithDuration(0.5, delay: 0.2, options: UIViewAnimationOptions.CurveLinear, animations: {
+                    pen.frame.origin.x = width - CGFloat(80)
+                    }, completion: { (finished: Bool) in
+                });
             }
-        case 3: 
+        case 3:
             mainImageView.image = nil
         default:
             println("default")
