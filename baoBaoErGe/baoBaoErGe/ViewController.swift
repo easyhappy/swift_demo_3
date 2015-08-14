@@ -22,20 +22,24 @@ class ViewController: UIViewController, SphereMenuDelegate {
     var opacity: CGFloat = 1.0
     var swiped = false
     var currentIndex = 0
+    var blackPen: UIImageView!
+    var greyPen: UIImageView!
+    var redPen: UIImageView!
+    var bluePen: UIImageView!
+    var lightBluePen: UIImageView!
+    var darkGreenPen: UIImageView!
+    var lightGreenPen: UIImageView!
+    var brownPen: UIImageView!
+    var darkOrangePen: UIImageView!
+    var yellowPen: UIImageView!
+    var eraserPen: UIImageView!
+    var colorPens: [String: UIImageView]!
     
-    let colors: [(CGFloat, CGFloat, CGFloat)] = [
-        (0, 0, 0),
-        (105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
-        (1.0, 0, 0),
-        (0, 0, 1.0),
-        (51.0 / 255.0, 204.0 / 255.0, 1.0),
-        (102.0 / 255.0, 204.0 / 255.0, 0),
-        (102.0 / 255.0, 1.0, 0),
-        (160.0 / 255.0, 82.0 / 255.0, 45.0 / 255.0),
-        (1.0, 102.0 / 255.0, 0),
-        (1.0, 1.0, 0),
-        (1.0, 1.0, 1.0),
-    ]
+
+    let colors: [(String, CGFloat, CGFloat, CGFloat)] = [("blackPen", 0, 0, 0), ("greyPen", 105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
+                ("redPen", 1.0, 0, 0), ("bluePen", 0, 0, 1.0), ("lightBluePen", 51.0 / 255.0, 204.0 / 255.0, 1.0), 
+                ("darkGreenPen", 102.0 / 255.0, 204.0 / 255.0, 0), ("lightGreenPen", 102.0 / 255.0, 1.0, 0),
+                ("brownPen", 160.0 / 255.0, 82.0 / 255.0, 45.0 / 255.0), ("darkOrangePen", 1.0, 102.0 / 255.0, 0), ("yellowPen", 1.0, 1.0, 0), ("eraserPen", 1.0, 1.0, 1.0)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,16 +50,191 @@ class ViewController: UIViewController, SphereMenuDelegate {
         let image4 = UIImage(named: "empty")
         let image5 = UIImage(named: "weixin")
         let image6 = UIImage(named: "home_icon")
+
         var images:[UIImage] = [image1!, image2!, image3!, image4!, image5!, image6!]
         var menu = SphereMenu(startPoint: CGPointMake(self.view.frame.width/2, self.view.frame.height-80), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
         self.view.addSubview(menu)
         self.tabBarController?.tabBar.hidden = true
+        addPens()
+    }
+
+    func addPens(){
+        var width = CGFloat(80)
+        var height = CGFloat(30)
+        var xOffset = self.view.frame.width - CGFloat(width)
+        var yOffset = height + CGFloat(40)
+        blackPen = UIImageView(image: UIImage(named: "Black"))
+        blackPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(blackPen)
+        yOffset = yOffset + height
+
+        greyPen = UIImageView(image: UIImage(named: "Grey"))
+        greyPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(greyPen)
+        yOffset = yOffset + height
+
+        redPen = UIImageView(image: UIImage(named: "Red"))
+        redPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(redPen)
+
+        yOffset = yOffset + height
+
+        bluePen = UIImageView(image: UIImage(named: "Blue"))
+        bluePen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(bluePen)
+
+        yOffset = yOffset + height
+        
+        lightBluePen = UIImageView(image: UIImage(named: "LightBlue"))
+        lightBluePen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(lightBluePen)
+
+        yOffset = yOffset + height
+
+        darkGreenPen = UIImageView(image: UIImage(named: "DarkGreen"))
+        darkGreenPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(darkGreenPen)
+
+        yOffset = yOffset + height
+
+        lightGreenPen = UIImageView(image: UIImage(named: "LightGreen"))
+        lightGreenPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(lightGreenPen)
+
+        yOffset = yOffset + height
+
+        brownPen = UIImageView(image: UIImage(named: "Brown"))
+        brownPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(brownPen)
+
+        yOffset = yOffset + height
+
+        darkOrangePen = UIImageView(image: UIImage(named: "DarkOrange"))
+        darkOrangePen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(darkOrangePen)
+
+        yOffset = yOffset + height
+
+        yellowPen = UIImageView(image: UIImage(named: "Yellow"))
+        yellowPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(yellowPen)
+
+        yOffset = yOffset + height
+
+        eraserPen = UIImageView(image: UIImage(named: "Eraser"))
+        eraserPen.frame = CGRectMake(xOffset, yOffset, width, height)
+        self.view.addSubview(eraserPen)
+
+        colorPens = ["blackPen": blackPen, "greyPen": greyPen, "redPen": redPen, "bluePen": bluePen, "lightBluePen": lightBluePen, 
+                    "darkGreenPen": darkGreenPen, "lightGreenPen": lightGreenPen, 
+                    "brownPen": brownPen, "darkOrangePen": darkOrangePen, "yellowPen": yellowPen, "eraserPen": eraserPen]
+
+         var blacktapGesture = UITapGestureRecognizer(target: self, action:  "blackPentapGesture:")
+         blackPen.addGestureRecognizer(blacktapGesture)
+         blackPen.userInteractionEnabled = true
+
+         var greytapGesture = UITapGestureRecognizer(target: self, action:  "greyPentapGesture:")
+         greyPen.addGestureRecognizer(greytapGesture)
+         greyPen.userInteractionEnabled = true
+
+        var redtapGesture = UITapGestureRecognizer(target: self, action:  "redPentapGesture:")
+        redPen.addGestureRecognizer(redtapGesture)
+        redPen.userInteractionEnabled = true
+
+         var bluetapGesture = UITapGestureRecognizer(target: self, action:  "bluePentapGesture:")
+         bluePen.addGestureRecognizer(bluetapGesture)
+         bluePen.userInteractionEnabled = true
+
+         var lightBluetapGesture = UITapGestureRecognizer(target: self, action:  "lightBluePentapGesture:")
+         lightBluePen.addGestureRecognizer(lightBluetapGesture)
+         lightBluePen.userInteractionEnabled = true
+         
+         var darkGreentapGesture = UITapGestureRecognizer(target: self, action:  "darkGreenPentapGesture:")
+         darkGreenPen.addGestureRecognizer(darkGreentapGesture)
+         darkGreenPen.userInteractionEnabled = true
+
+         var lightGreentapGesture = UITapGestureRecognizer(target: self, action:  "lightGreenentapGesture:")
+         lightGreenPen.addGestureRecognizer(lightGreentapGesture)
+         lightGreenPen.userInteractionEnabled = true
+
+         var browntapGesture = UITapGestureRecognizer(target: self, action:  "brownPentapGesture:")
+         brownPen.addGestureRecognizer(browntapGesture)
+         brownPen.userInteractionEnabled = true
+
+         var darkOrangetapGesture = UITapGestureRecognizer(target: self, action:  "darkOrangePentapGesture:")
+         darkOrangePen.addGestureRecognizer(darkOrangetapGesture)
+         darkOrangePen.userInteractionEnabled = true
+
+         var yellowtapGesture = UITapGestureRecognizer(target: self, action:  "yellowPentapGesture:")
+         yellowPen.addGestureRecognizer(yellowtapGesture)
+         yellowPen.userInteractionEnabled = true
+
+         var eraserapGesture = UITapGestureRecognizer(target: self, action:  "eraserPentapGesture:")
+         eraserPen.addGestureRecognizer(eraserapGesture)
+         eraserPen.userInteractionEnabled = true
+    }
+
+    func blackPentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("blackPen")
+    }
+
+    func greyPentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("greyPen")
+    }
+
+    func redPentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("redPen")
+    }
+
+    func bluePentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("bluePen")
+    }
+
+    func lightBluePentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("lightBluePen")
+    }
+
+    func darkGreenPentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("darkGreenPen")
+    }
+
+    func lightGreenentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("lightGreenPen")
+    }
+
+    func brownPentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("brownPen")
+    }
+
+    func darkOrangePentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("eraserdarkOrangePen")
+    }
+
+    func yellowPentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("yellowPen")
+    }
+
+    func eraserPentapGesture(gesture: UIGestureRecognizer) {
+        pentapGesture("eraserPen")
     }
     
+
+    func pentapGesture(colorPen: String){
+        //currentColor = color
+        var currentPen = ""
+        for color in colors{
+            (currentPen, red, green, blue) = color
+            if currentPen == colorPen{
+                return
+            }
+        }
+        
+    }
+
     func sphereDidSelected(index: Int) {
         if index == 0 {
-            self.performSegueWithIdentifier("quseSegue", sender: self)
+            addPens()
         }
     }
 
@@ -83,16 +262,16 @@ class ViewController: UIViewController, SphereMenuDelegate {
     
     @IBAction func pencilPressed(sender: AnyObject) {
         
-        var index = sender.tag ?? 0
-        if index < 0 || index >= colors.count {
-            index = 0
-        }
-        
-        (red, green, blue) = colors[index]
-        
-        if index == colors.count - 1 {
-            opacity = 1.0
-        }
+//        var index = sender.tag ?? 0
+//        if index < 0 || index >= colors.count {
+//            index = 0
+//        }
+//        
+//        (red, green, blue) = colors[index]
+//        
+//        if index == colors.count - 1 {
+//            opacity = 1.0
+//        }
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -104,10 +283,28 @@ class ViewController: UIViewController, SphereMenuDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = true
+        tempImageView.snp_makeConstraints { (make) -> Void in
+           make.width.equalTo(self.view.frame.size.width)
+           make.height.equalTo(self.view.frame.size.height)
+
+           make.top.equalTo(self.view).offset(0)
+           make.left.equalTo(self.view).offset(0)
+           make.bottom.equalTo(self.view).offset(0)
+           make.right.equalTo(self.view).offset(0)
+        }
+
+        mainImageView.snp_makeConstraints { (make) -> Void in
+           make.width.equalTo(self.view.frame.size.width)
+           make.height.equalTo(self.view.frame.size.height)
+
+           make.top.equalTo(self.view).offset(0)
+           make.left.equalTo(self.view).offset(0)
+           make.bottom.equalTo(self.view).offset(0)
+           make.right.equalTo(self.view).offset(0)
+        }
     }
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-        
         // 1
         UIGraphicsBeginImageContext(view.frame.size)
         let context = UIGraphicsGetCurrentContext()
@@ -146,14 +343,13 @@ class ViewController: UIViewController, SphereMenuDelegate {
     }
     
     override func touchesEnded(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
         if !swiped {
             // draw a single point
             drawLineFrom(lastPoint, toPoint: lastPoint)
         }
         
         // Merge tempImageView into mainImageView
-        UIGraphicsBeginImageContext(mainImageView.frame.size)
+        UIGraphicsBeginImageContext(view.frame.size)
         mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
         tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
         mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
