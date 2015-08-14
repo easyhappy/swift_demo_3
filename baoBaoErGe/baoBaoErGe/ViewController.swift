@@ -11,8 +11,8 @@ import FlatUIColors
 
 class ViewController: UIViewController, SphereMenuDelegate {
     
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var tempImageView: UIImageView!
+    var mainImageView: UIImageView!
+    var tempImageView: UIImageView!
     
     var lastPoint = CGPoint.zeroPoint
     var red: CGFloat = 0.0
@@ -66,9 +66,14 @@ class ViewController: UIViewController, SphereMenuDelegate {
         //    make.bottom.equalTo(self.view).offset(0)
         //    make.right.equalTo(self.view).offset(0)
         // }
+        mainImageView = UIImageView()
+        self.view.addSubview(mainImageView)
+        
+        tempImageView = UIImageView()
+        self.view.addSubview(tempImageView)
 
-        mainImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height-200)
-        tempImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height-200)
+        mainImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height)
+        tempImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height)
 //        mainImageView.snp_makeConstraints { (make) -> Void in
 //           make.width.equalTo(self.view.frame.size.width)
 //           make.height.equalTo(self.view.frame.size.height)
