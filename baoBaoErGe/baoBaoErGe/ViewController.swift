@@ -252,6 +252,9 @@ class ViewController: UIViewController, SphereMenuDelegate {
         for color in colors{
             (currentPen, red, green, blue) = color
             if currentPen == colorPen{
+                for (key, pen) in colorPens{
+                    pen.hidden = true
+                }
                 return
             }
         }
@@ -259,9 +262,17 @@ class ViewController: UIViewController, SphereMenuDelegate {
     }
 
     func sphereDidSelected(index: Int) {
-        if index == 0 {
-            addPens()
+        switch  index {
+        case 0:
+            for (key, pen) in colorPens{
+                pen.hidden = false
+            }
+        case 3: 
+            mainImageView.image = nil
+        default:
+            println("default")
         }
+
     }
 
     override func didReceiveMemoryWarning() {
