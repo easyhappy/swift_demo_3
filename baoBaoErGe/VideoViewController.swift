@@ -18,7 +18,6 @@ import ReachabilitySwift
 
 var CurrentTitle = "是的"
 
-
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
 
     @IBOutlet weak var menuButton1: UIButton!
@@ -138,7 +137,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewWillDisappear(animated: Bool) {
         //self.totalView?.setY(y: 80)
         
-        MTA.trackPageViewEnd("videosList")
+        //MTA.trackPageViewEnd("videosList")
         
     }
     
@@ -195,7 +194,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
         //self.view.backgroundColor = UIColor(red: 65.0 / 255.0, green: 100.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         menuButton1?.frame = CGRectMake(menuButtonPortraitLeadingConstant, menuButtonPortraitLeadingConstant+statusbarHeight, 30.0, 30.0)
         menuButton1?.hidden = true
-        MTA.trackPageViewBegin("videosList")
+        //MTA.trackPageViewBegin("videosList")
         definesPresentationContext = true
     }
     

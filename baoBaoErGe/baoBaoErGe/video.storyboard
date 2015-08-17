@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Video View Controller-->
+        <!--video-->
         <scene sceneID="fZ4-Oo-p3h">
             <objects>
-                <viewController id="p7z-8x-SJy" customClass="VideoViewController" customModule="baoBaoErGe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="video" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p7z-8x-SJy" userLabel="video" customClass="VideoViewController" customModule="baoBaoErGe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cfP-Tf-sQ5"/>
                         <viewControllerLayoutGuide type="bottom" id="CyS-84-qKA"/>
@@ -82,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qo-XQ-iI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="443"/>
+            <point key="canvasLocation" x="1886" y="431"/>
         </scene>
         <!--Video Player View Controller-->
         <scene sceneID="IM9-sT-b70">

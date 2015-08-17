@@ -46,13 +46,13 @@ class ViewController: UIViewController, SphereMenuDelegate {
         super.viewDidLoad()
         let start = UIImage(named: "start")
         let image1 = UIImage(named: "quse")
-        let image2 = UIImage(named: "iphoto")
-        let image3 = UIImage(named: "setting")
+        //let image2 = UIImage(named: "iphoto")
+        //let image3 = UIImage(named: "setting")
         let image4 = UIImage(named: "empty")
-        let image5 = UIImage(named: "weixin")
+        //let image5 = UIImage(named: "weixin")
         let image6 = UIImage(named: "home_icon")
 
-        var images:[UIImage] = [image1!, image2!, image3!, image4!, image5!, image6!]
+        var images:[UIImage] = [image1!, image4!, image6!]
         var menu = SphereMenu(startPoint: CGPointMake(self.view.frame.width/2, self.view.frame.height-80), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
         self.view.addSubview(menu)
@@ -260,7 +260,7 @@ class ViewController: UIViewController, SphereMenuDelegate {
                         pen.frame.origin.x = self.view.frame.width - CGFloat(80)
                     }
                     else {
-                        UIView.animateWithDuration(0.5, delay: 0.2, options: UIViewAnimationOptions.CurveLinear, animations: {
+                        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
                             pen.frame.origin.x = self.view.frame.width
                             }, completion: { (finished: Bool) in
                         });
@@ -282,7 +282,7 @@ class ViewController: UIViewController, SphereMenuDelegate {
                         pen.frame.origin.x = self.view.frame.width - CGFloat(80)
                     }
                     else {
-                        UIView.animateWithDuration(0.5, delay: 0.2, options: UIViewAnimationOptions.CurveLinear, animations: {
+                        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
                             pen.frame.origin.x = self.view.frame.width
                             }, completion: { (finished: Bool) in
                         });
@@ -298,13 +298,19 @@ class ViewController: UIViewController, SphereMenuDelegate {
         case 0:
             var width = self.view.frame.width
             for (key, pen) in colorPens{
-                UIView.animateWithDuration(0.5, delay: 0.2, options: UIViewAnimationOptions.CurveLinear, animations: {
+                UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
                     pen.frame.origin.x = width - CGFloat(80)
                     }, completion: { (finished: Bool) in
                 });
             }
-        case 3:
+        case 1:
             mainImageView.image = nil
+        case 2:
+            // let storyboard = UIStoryboard(name: "video", bundle: nil)
+            // let vc = storyboard.instantiateViewControllerWithIdentifier("VideoViewController") as! VideoViewController
+            // self.presentViewController(vc, animated: true, completion: nil)
+            //navigationController?.popToRootViewControllerAnimated(true)
+            self.tabBarController!.selectedIndex = 0
         default:
             println("default")
         }
