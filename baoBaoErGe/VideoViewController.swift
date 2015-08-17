@@ -86,7 +86,7 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         navBar.barTintColor = FlatUIColors.greenSeaColor(); //UIColor(red: 65.0 / 255.0, green: 62.0 / 255.0, blue: 79.0 / 255.0, alpha: 1)
         navBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        gad_view = GADViewController(rootView: self)
+        gad_view = GADViewController(rootView: self, gad_type: 1)
 
         self.title = "儿歌"
         // Do any additional setup after loading the view.

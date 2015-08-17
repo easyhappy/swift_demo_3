@@ -35,7 +35,7 @@ class ViewController: UIViewController, SphereMenuDelegate {
     var eraserPen: UIImageView!
     var colorPens: [String: UIImageView]!
     var currentPen: String = ""
-    
+    var gad_view: GADViewController!
 
     let colors: [(String, CGFloat, CGFloat, CGFloat)] = [("blackPen", 0, 0, 0), ("greyPen", 105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
                 ("redPen", 1.0, 0, 0), ("bluePen", 0, 0, 1.0), ("lightBluePen", 51.0 / 255.0, 204.0 / 255.0, 1.0), 
@@ -77,6 +77,8 @@ class ViewController: UIViewController, SphereMenuDelegate {
         tempImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height)
         currentPen = "blackPen"
         initPenPosition()
+        gad_view = GADViewController(rootView: self, gad_type: 2)
+        self.view.addSubview(gad_view)
 //        mainImageView.snp_makeConstraints { (make) -> Void in
 //           make.width.equalTo(self.view.frame.size.width)
 //           make.height.equalTo(self.view.frame.size.height)

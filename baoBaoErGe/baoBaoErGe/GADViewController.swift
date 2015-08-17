@@ -10,35 +10,51 @@ class GADViewController: UIView{
     var secondsCountDown = 5
     var secondsDownTimer: NSTimer!
     var delegate: VideoPlayerViewController!
-    init(rootView: UIViewController) {
-        bannerView = GADBannerView()
-        tip = UILabel()
-        tip.text = "正在加载中...."
+    init(rootView: UIViewController, gad_type: Int) {
+        if gad_type == 1{
 
-        tip.textAlignment = NSTextAlignment.Center
-        tip.textColor = UIColor.blackColor()
-        bannerView.rootViewController = rootView
-        bannerView.adUnitID = "ca-app-pub-9307633717110161/4713933935" 
-        var width: CGFloat = 400
-        var height: CGFloat = 150
-        // (0.0, 0.0, 375.0, 667.0)
-        tip.frame = CGRectMake(0, 0, width, 20)
-        //bannerView.frame = CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4, width, height)
-        bannerView.frame = CGRectMake(0, 20, width, height)
-        
-        numberImage  = UIImage(named: "5.png")
-        numberImageView = UIImageView(image: numberImage)
-        numberImageView.frame = CGRectMake(width-45, 20, 40, 40)
-        
-        super.init(frame: CGRectMake((rootView.view.frame.height-width)/2, (rootView.view.frame.width-height)/2, width, height))
-        self.addSubview(bannerView)
-        self.addSubview(tip)
-        self.addSubview(numberImageView)
-        var request:GADRequest = GADRequest()
-        request.testDevices = [""]
-        bannerView.loadRequest(request)
-        
-        var timer = NSTimer.scheduledTimerWithTimeInterval(61, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+            bannerView = GADBannerView()
+            tip = UILabel()
+            tip.text = "正在加载中...."
+
+            tip.textAlignment = NSTextAlignment.Center
+            tip.textColor = UIColor.blackColor()
+            bannerView.rootViewController = rootView
+            bannerView.adUnitID = "ca-app-pub-9307633717110161/4713933935" 
+            var width: CGFloat = 400
+            var height: CGFloat = 150
+            // (0.0, 0.0, 375.0, 667.0)
+            tip.frame = CGRectMake(0, 0, width, 20)
+            //bannerView.frame = CGRectMake((rootView.view.frame.height-width)/4, (rootView.view.frame.width-height)/4, width, height)
+            bannerView.frame = CGRectMake(0, 20, width, height)
+            
+            numberImage  = UIImage(named: "5.png")
+            numberImageView = UIImageView(image: numberImage)
+            numberImageView.frame = CGRectMake(width-45, 20, 40, 40)
+            
+            super.init(frame: CGRectMake((rootView.view.frame.height-width)/2, (rootView.view.frame.width-height)/2, width, height))
+            self.addSubview(bannerView)
+            self.addSubview(tip)
+            self.addSubview(numberImageView)
+            var request:GADRequest = GADRequest()
+            request.testDevices = [""]
+            bannerView.loadRequest(request)
+            
+            var timer = NSTimer.scheduledTimerWithTimeInterval(61, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        }else{
+            bannerView = GADBannerView()
+            bannerView.rootViewController = rootView
+            bannerView.adUnitID = "ca-app-pub-9307633717110161/4713933935" 
+            super.init(frame: CGRectMake(0, 0, rootView.view.frame.width, 40))
+            bannerView.frame = CGRectMake(0, 0, rootView.view.frame.width, 40)
+            self.addSubview(bannerView)
+
+            var request:GADRequest = GADRequest()
+            request.testDevices = [""]
+            bannerView.loadRequest(request)
+            
+            var timer = NSTimer.scheduledTimerWithTimeInterval(61, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        }
     }
 
     func showGAD(delegate: VideoPlayerViewController){
