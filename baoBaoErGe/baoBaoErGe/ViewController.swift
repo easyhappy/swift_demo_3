@@ -46,18 +46,17 @@ class ViewController: UIViewController, SphereMenuDelegate {
         super.viewDidLoad()
         let start = UIImage(named: "start")
         let image1 = UIImage(named: "quse")
-        //let image2 = UIImage(named: "iphoto")
+        let image2 = UIImage(named: "iphoto")
         //let image3 = UIImage(named: "setting")
         let image4 = UIImage(named: "empty")
         //let image5 = UIImage(named: "weixin")
         let image6 = UIImage(named: "home_icon")
 
-        var images:[UIImage] = [image1!, image4!, image6!]
+        var images:[UIImage] = [image1!, image2!, image4!, image6!]
         var menu = SphereMenu(startPoint: CGPointMake(self.view.frame.width/2, self.view.frame.height-80), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
-        self.view.addSubview(menu)
+        
         self.tabBarController?.tabBar.hidden = true
-        addPens()
         // tempImageView.snp_makeConstraints { (make) -> Void in
         //    make.width.equalTo(self.view.frame.size.width)
         //    make.height.equalTo(self.view.frame.size.height)
@@ -72,9 +71,12 @@ class ViewController: UIViewController, SphereMenuDelegate {
         
         tempImageView = UIImageView()
         self.view.addSubview(tempImageView)
-
-        mainImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height)
-        tempImageView.frame = CGRectMake(0 , 0, self.view.frame.width, self.view.frame.height)
+        addPens()
+        self.view.addSubview(menu)
+        mainImageView.frame = CGRectMake(0 , 40, self.view.frame.width, self.view.frame.height)
+        mainImageView.contentMode = UIViewContentMode.ScaleToFill
+        tempImageView.frame = CGRectMake(0 , 40, self.view.frame.width, self.view.frame.height)
+        tempImageView.contentMode = UIViewContentMode.ScaleToFill
         currentPen = "blackPen"
         initPenPosition()
         gad_view = GADViewController(rootView: self, gad_type: 2)
@@ -306,8 +308,13 @@ class ViewController: UIViewController, SphereMenuDelegate {
                 });
             }
         case 1:
-            mainImageView.image = nil
+            var imagePicker = UIImagePickerController();
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(imagePicker, animated: true, completion: nil)
         case 2:
+            mainImageView.image = nil
+        case 3:
             // let storyboard = UIStoryboard(name: "video", bundle: nil)
             // let vc = storyboard.instantiateViewControllerWithIdentifier("VideoViewController") as! VideoViewController
             // self.presentViewController(vc, animated: true, completion: nil)
@@ -369,10 +376,9 @@ class ViewController: UIViewController, SphereMenuDelegate {
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
         // 1
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContext(mainImageView.frame.size)
         let context = UIGraphicsGetCurrentContext()
-        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-        
+        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height))
         // 2
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
@@ -412,9 +418,9 @@ class ViewController: UIViewController, SphereMenuDelegate {
         }
         
         // Merge tempImageView into mainImageView
-        UIGraphicsBeginImageContext(view.frame.size)
-        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
-        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
+        UIGraphicsBeginImageContext(mainImageView.frame.size)
+        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: kCGBlendModeNormal, alpha: 1.0)
+        tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: mainImageView.frame.size.width, height: mainImageView.frame.size.height), blendMode: kCGBlendModeNormal, alpha: opacity)
         mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -445,3 +451,23 @@ extension ViewController: SettingsViewControllerDelegate {
     }
 }
 
+extension ViewController: UINavigationControllerDelegate{
+ // 为什么需要实现这个协议
+}
+
+extension ViewController: UIImagePickerControllerDelegate{
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
+        
+      self.dismissViewControllerAnimated(true, completion: nil)
+        print(info)
+        self.mainImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+    }
+
+}
